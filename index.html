@@ -38,7 +38,7 @@
                 }, 50);
             }
 
-            // Enhanced Logo Push Animation Logic
+            // 3-Stage Logo Push Logic
             if (hash === 'radio') {
                 logoWrapper.style.transform = 'translateY(-40px)';
             } else if (hash === 'ethics') {
@@ -75,7 +75,6 @@
             max-width: 1100px;
         }
 
-        /* Fixed Viewport for 3-stage Logo Push-up */
         .logo-viewport {
             height: 40px;
             overflow: hidden;
@@ -110,20 +109,19 @@
     <nav class="floating-nav">
         <div class="bg-white border border-gray-200 shadow-2xl px-8 py-4 flex justify-between items-center">
             
-            <!-- Three-Stage Logo Animation -->
             <div class="logo-viewport cursor-pointer" onclick="showPage('home')">
                 <div id="logo-wrapper">
-                    <!-- Stage 1: Standard (No radio/ethics part) -->
+                    <!-- Stage 1: Standard -->
                     <div class="logo-item">
-                        <img class="h-6 w-auto" src="Group 373.svg" alt="Cirya Standard">
+                        <img class="h-6 w-auto" src="Group 373.svg" alt="Cirya">
                     </div>
-                    <!-- Stage 2: Radio (image_189aed.png style) -->
+                    <!-- Stage 2: Radio -->
                     <div class="logo-item">
                         <img class="h-10 w-auto" src="radio.svg" alt="Cirya Radio">
                     </div>
-                    <!-- Stage 3: Ethics -->
+                    <!-- Stage 3: Ethics (Using black asset for nav) -->
                     <div class="logo-item">
-                        <img class="h-10 w-auto" src="ethics.svg" alt="Cirya Ethics">
+                        <img class="h-10 w-auto" src="blackethics.svg" alt="Cirya Ethics">
                     </div>
                 </div>
             </div>
@@ -149,7 +147,7 @@
             <div class="absolute inset-0 bg-black opacity-60"></div>
             <div class="relative max-w-7xl mx-auto px-6 text-center">
                 <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight italic uppercase">Uncompromising Journalism</h1>
-                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 font-light italic">Resilient digital infrastructure for the global intelligence network.</p>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 font-light italic">Resilient digital infrastructure for global network intelligence.</p>
                 <div class="flex justify-center">
                     <a href="https://cirya.co" class="inline-block bg-ciryablue text-white px-12 py-5 font-bold text-lg hover:bg-blue-800 transition shadow-2xl">Enter Platform</a>
                 </div>
@@ -188,7 +186,6 @@
                 </div>
                 <h3 class="text-4xl font-black mb-12 tracking-tight uppercase italic">Cirya Radio Network</h3>
                 <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md">
-                    <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold mb-1">Status</p>
                     <p class="text-xl font-bold tracking-tight">Active Broadcast Protocol</p>
                 </div>
             </div>
@@ -198,9 +195,13 @@
     <!-- ETHICS PAGE -->
     <main id="ethics-page" class="hidden page-transition opacity-0 translate-y-8 pt-48 pb-32">
         <section class="max-w-4xl mx-auto px-6">
-            <div class="bg-ciryablue p-16 mb-20 shadow-2xl border-t-8 border-green-400">
-                <h2 class="text-5xl font-black text-white mb-2 italic tracking-tighter uppercase">Editorial Ethics</h2>
-                <p class="text-blue-100 text-lg font-bold uppercase tracking-widest">Sustainability & Integrity</p>
+            <!-- White logo used for the hero background contrast -->
+            <div class="bg-ciryablue p-16 mb-20 shadow-2xl border-t-8 border-green-400 flex justify-between items-center">
+                <div>
+                    <h2 class="text-5xl font-black text-white mb-2 italic tracking-tighter uppercase">Editorial Ethics</h2>
+                    <p class="text-blue-100 text-lg font-bold uppercase tracking-widest">Sustainability & Integrity</p>
+                </div>
+                <img class="h-16 w-auto opacity-50" src="ethics.svg" alt="Ethics Logo White">
             </div>
             <div class="border-l-4 border-ciryablue pl-10 space-y-12">
                 <div>
@@ -251,7 +252,10 @@
             </div>
             <div class="pt-10 border-t border-gray-800 text-[10px] font-black uppercase tracking-[0.5em] flex justify-between items-center">
                 <p>&copy; 2026 Cirya Media Network</p>
-                <a href="https://x.com/ciryanews" class="hover:text-white transition">X / Twitter</a>
+                <div class="flex items-center space-x-6">
+                    <img class="h-4 w-auto opacity-30" src="blackethics.svg" alt="Ethics Branding">
+                    <a href="https://x.com/ciryanews" class="hover:text-white transition">X / Twitter</a>
+                </div>
             </div>
         </div>
     </footer>
