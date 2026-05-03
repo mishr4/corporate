@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cirya Corporate</title>
     
+    <!-- Social Media / Discord Preview Metadata -->
+    <meta property="og:title" content="Cirya Corporate">
+    <meta property="og:description" content="Capital & Intelligence Network">
+    <meta property="og:image" content="Slide 16_9 - 58 (2).png">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/png" href="Frame 27 (8).png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -58,7 +64,6 @@
                 }, 50);
             }
 
-            // Logo Animation Logic
             if (hash === 'radio') {
                 logoWrapper.style.transform = 'translateY(-40px)';
             } else if (hash === 'ethics') {
@@ -79,108 +84,260 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        
         body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-        .page-transition { transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-        .floating-nav { position: fixed; top: 2rem; left: 50%; transform: translateX(-50%); z-index: 100; width: 90%; max-width: 1100px; }
-        .logo-viewport { height: 40px; overflow: hidden; display: flex; flex-direction: column; }
-        #logo-wrapper { transition: transform 0.8s cubic-bezier(0.8, 0, 0.1, 1); display: flex; flex-direction: column; }
-        .logo-item { height: 40px; display: flex; align-items: center; flex-shrink: 0; }
-        .nav-link { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.2s ease; }
-        .btn-black-hover { background-color: #000; color: #fff; transition: all 0.3s ease; }
-        .btn-black-hover:hover { background-color: #3b28cc; transform: translateY(-1px); }
-        .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .card-hover:hover { transform: translateY(-8px); border-color: #3b28cc; }
+
+        .page-transition {
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .floating-nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: 90%;
+            max-width: 1100px;
+        }
+
+        .logo-viewport {
+            height: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #logo-wrapper {
+            transition: transform 0.8s cubic-bezier(0.8, 0, 0.1, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-item {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .nav-link {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .btn-black-hover {
+            background-color: #000;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .btn-black-hover:hover {
+            background-color: #3b28cc;
+            transform: translateY(-1px);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            border-color: #3b28cc;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
 
     <nav class="floating-nav">
         <div class="bg-white border border-gray-100 shadow-2xl px-8 py-4 flex justify-between items-center rounded-sm">
+            
             <div class="logo-viewport cursor-pointer" onclick="showPage('home')">
                 <div id="logo-wrapper">
-                    <div class="logo-item"><img class="h-6 w-auto" src="Group 373.svg" alt="Cirya"></div>
-                    <div class="logo-item"><img class="h-10 w-auto" src="radio.svg" alt="Cirya Radio"></div>
-                    <div class="logo-item"><img class="h-10 w-auto" src="blackethics.svg" alt="Cirya Ethics"></div>
+                    <div class="logo-item">
+                        <img class="h-6 w-auto" src="Group 373.svg" alt="Cirya">
+                    </div>
+                    <div class="logo-item">
+                        <img class="h-10 w-auto" src="radio.svg" alt="Cirya Radio">
+                    </div>
+                    <div class="logo-item">
+                        <img class="h-10 w-auto" src="blackethics.svg" alt="Cirya Ethics">
+                    </div>
                 </div>
             </div>
+
             <div class="hidden md:flex space-x-10 items-center">
                 <button onclick="showPage('radio')" class="nav-link text-gray-400 hover:text-ciryablue">Radio</button>
                 <button onclick="showPage('leadership')" class="nav-link text-gray-400 hover:text-ciryablue">Leadership</button>
                 <button onclick="showPage('ethics')" class="nav-link text-gray-400 hover:text-ciryablue">Ethics</button>
             </div>
+            
             <div class="flex items-center space-x-6">
-                <a href="mailto:contact@cirya.co" class="btn-black-hover px-7 py-3 font-extrabold text-[10px] tracking-widest rounded-sm uppercase">Contact</a>
+                <a href="mailto:contact@cirya.co" class="btn-black-hover px-7 py-3 font-extrabold text-[10px] tracking-widest rounded-sm">CONTACT</a>
             </div>
         </div>
     </nav>
 
     <!-- HOME PAGE -->
     <main id="home" class="page-transition opacity-100 translate-y-0">
-        <header class="bg-white pt-80 pb-40">
+        <header class="bg-white pt-80 pb-32">
             <div class="max-w-7xl mx-auto px-6 text-center">
-                <h1 class="text-6xl md:text-8xl font-extrabold text-black mb-12 uppercase tracking-tightest leading-[0.9]">Capital &<br>Intelligence</h1>
-                <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-24 font-medium leading-relaxed">High-value digital infrastructure for the global intelligence network.</p>
+                <h1 class="text-6xl md:text-8xl font-extrabold text-black mb-8 uppercase tracking-tightest">Capital & Intelligence</h1>
+                <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-16 font-medium leading-relaxed">High-value digital infrastructure for the global intelligence network.</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left max-w-7xl mx-auto mb-40">
-                    <div class="bg-white p-12 border border-gray-100 card-hover shadow-sm">
-                        <div class="w-12 h-1 bg-ciryablue mb-10"></div>
-                        <h3 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Network Assets</h3>
-                        <p class="text-gray-500 font-medium leading-relaxed">Managing high-availability broadcast nodes across global digital radio networks.</p>
+                <!-- About Section -->
+                <div class="max-w-4xl mx-auto mb-32 text-left">
+                    <h2 class="text-[10px] font-extrabold text-ciryablue uppercase tracking-widest mb-4">About Us</h2>
+                    <p class="text-2xl font-extrabold uppercase mb-8 tracking-tightest">A Decentralized Media Conglomerate</p>
+                    <p class="text-gray-500 leading-relaxed font-medium">Cirya Media Network is a specialized digital entity focused on the intersection of capital growth and informational integrity. We build and maintain the infrastructure that powers independent broadcasting, ensuring truth is accessible and decentralized.</p>
+                </div>
+
+                <!-- Asset Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-7xl mx-auto pb-24">
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 bg-ciryablue mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Broadcast Assets</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">We manage a portfolio of high-availability broadcast nodes, ensuring low-latency transmission across networks.</p>
+                        <p class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">Asset ID: CIR-RADIO-01</p>
                     </div>
-                    <div class="bg-white p-12 border border-gray-100 card-hover shadow-sm">
-                        <div class="w-12 h-1 bg-black mb-10"></div>
-                        <h3 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Data Integrity</h3>
-                        <p class="text-gray-500 font-medium leading-relaxed">Shielded editorial and technical operations focused on verifiable raw intelligence.</p>
+
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 bg-black mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Digital Ethics</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">Independence is our core metric. Operations are shielded from external institutional pressure.</p>
+                        <button onclick="showPage('ethics')" class="text-[10px] font-extrabold text-ciryablue uppercase tracking-widest hover:underline">View Ethics Charter →</button>
                     </div>
-                    <div class="bg-white p-12 border border-gray-100 card-hover shadow-sm">
-                        <div class="w-12 h-1 bg-gray-200 mb-10"></div>
-                        <h3 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Cloud Infrastructure</h3>
-                        <p class="text-gray-500 font-medium leading-relaxed">Proprietary server clusters designed for 99.9% uptime and decentralized scaling.</p>
+
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 bg-gray-200 mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Intelligence Grid</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">Our network leverages real-time data verification to provide high-fidelity reporting and market analysis.</p>
+                        <p class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">Status: Operational</p>
                     </div>
-                    <div class="bg-white p-12 border border-gray-100 card-hover shadow-sm">
-                        <div class="w-12 h-1 bg-green-500 mb-10"></div>
-                        <h3 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Market Analysis</h3>
-                        <p class="text-gray-500 font-medium leading-relaxed">Real-time financial tracking and capital growth strategies for digital holdings.</p>
+
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 bg-green-500 mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Capital Growth</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">Strategic investment in digital holdings and media-tech infrastructure for sustainable expansion.</p>
                     </div>
-                    <div class="bg-white p-12 border border-gray-100 card-hover shadow-sm">
-                        <div class="w-12 h-1 bg-red-500 mb-10"></div>
-                        <h3 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Secure Streams</h3>
-                        <p class="text-gray-500 font-medium leading-relaxed">End-to-end encrypted audio transmission for private and corporate broadcasts.</p>
+
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 bg-red-500 mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Secure Nodes</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">End-to-end encrypted transmission lines for corporate and private data broadcasting.</p>
                     </div>
-                    <div class="bg-white p-12 border border-gray-100 card-hover shadow-sm">
-                        <div class="w-12 h-1 bg-yellow-500 mb-10"></div>
-                        <h3 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">OSINT Operations</h3>
-                        <p class="text-gray-500 font-medium leading-relaxed">Leveraging open-source intelligence to provide a clear view of global events.</p>
+
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 bg-yellow-500 mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Technical Support</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">24/7 network monitoring and rapid-response technical troubleshooting for all Cirya assets.</p>
                     </div>
                 </div>
             </div>
         </header>
     </main>
 
+    <!-- RADIO PAGE -->
+    <main id="radio-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
+        <section class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-20 border-b-4 border-black pb-10">
+                <h2 class="text-7xl font-extrabold uppercase tracking-tightest">Radio Ops</h2>
+                <img class="h-16 w-auto" src="radio.svg" alt="Radio Logo">
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 bg-black text-white p-16 rounded-sm shadow-2xl">
+                    <div class="flex items-center space-x-3 mb-12">
+                        <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
+                        <span class="text-[11px] font-extrabold tracking-widest uppercase">Live Broadcast</span>
+                    </div>
+                    <h3 class="text-6xl font-extrabold uppercase mb-4">Cirya Radio One</h3>
+                    <p class="text-gray-400 font-bold mb-16 uppercase tracking-widest">Feed: https://cast.cirya.co/listen/one/radio.mp3</p>
+                    
+                    <div class="flex items-center space-x-8">
+                        <button onclick="toggleAudio()" class="w-20 h-20 bg-white text-black flex items-center justify-center rounded-full hover:bg-ciryablue hover:text-white transition group">
+                            <svg id="play-btn-icon" class="w-8 h-8 fill-current translate-x-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="flex-1">
+                            <div class="h-1 bg-gray-800 w-full mb-4"><div class="h-1 bg-ciryablue w-1/3"></div></div>
+                            <div class="flex justify-between text-[10px] font-extrabold uppercase tracking-widest text-gray-500"><span>Streaming MP3</span><span>Secure Feed</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-100 p-12 shadow-sm">
+                    <h4 class="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 mb-8 pb-4 border-b">Personnel</h4>
+                    <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" alt="Hashtag" class="w-32 h-32 object-cover mb-8 rounded-sm">
+                    <h5 class="text-3xl font-extrabold uppercase mb-2">Hashtag</h5>
+                    <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest mb-8">Head of Radio Operations</p>
+                    <a href="mailto:hashtag@cirya.co" class="block w-full py-4 border-2 border-black text-center font-extrabold text-xs uppercase tracking-widest hover:bg-black hover:text-white transition">hashtag@cirya.co</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- LEADERSHIP PAGE -->
-    <main id="leadership-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-48">
-        <section class="max-w-7xl mx-auto px-6">
-            <h2 class="text-7xl font-extrabold mb-32 uppercase tracking-tightest">Personnel</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+    <main id="leadership-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
+        <section class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-7xl font-extrabold mb-24 uppercase tracking-tightest">Personnel</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div class="group">
-                    <img src="https://i.ibb.co/5b56PPg/Rectangle-59.png" alt="Alex Mishra" class="w-full aspect-square object-cover mb-10 grayscale hover:grayscale-0 transition duration-500">
-                    <h3 class="text-3xl font-extrabold uppercase mb-2">Alex Mishra</h3>
-                    <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Chief Executive Officer</p>
+                    <img src="https://i.ibb.co/5b56PPg/Rectangle-59.png" alt="Alex Mishra" class="w-full aspect-square object-cover mb-8 grayscale hover:grayscale-0 transition duration-500">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-black">Alex Mishra</h3>
+                    <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">CEO</p>
                 </div>
                 <div class="group">
-                    <img src="https://i.ibb.co/QvjvNSFB/Rectangle-61.png" alt="Cody Devbro" class="w-full aspect-square object-cover mb-10 grayscale hover:grayscale-0 transition duration-500">
-                    <h3 class="text-3xl font-extrabold uppercase mb-2">Cody Devbro</h3>
-                    <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Chief Technology Officer</p>
+                    <img src="https://i.ibb.co/QvjvNSFB/Rectangle-61.png" alt="Cody Devbro" class="w-full aspect-square object-cover mb-8 grayscale hover:grayscale-0 transition duration-500">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-black">Cody Devbro</h3>
+                    <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">CTO</p>
                 </div>
                 <div class="group">
-                    <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" alt="Hashtag" class="w-full aspect-square object-cover mb-10 grayscale hover:grayscale-0 transition duration-500">
-                    <h3 class="text-3xl font-extrabold uppercase mb-2">Hashtag</h3>
-                    <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Head of Radio Operations</p>
+                    <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" alt="Hashtag" class="w-full aspect-square object-cover mb-8 grayscale hover:grayscale-0 transition duration-500">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-black">Hashtag</h3>
+                    <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Head of Radio</p>
                 </div>
                 <div class="group">
-                    <img src="https://i.ibb.co/QF6W9sH1/Rectangle-60.png" alt="Seehed" class="w-full aspect-square object-cover mb-10 grayscale hover:grayscale-0 transition duration-500">
-                    <h3 class="text-3xl font-extrabold uppercase mb-2">Seehed</h3>
+                    <img src="https://i.ibb.co/QF6W9sH1/Rectangle-60.png" alt="Seehed" class="w-full aspect-square object-cover mb-8 grayscale hover:grayscale-0 transition duration-500">
+                    <h3 class="text-3xl font-extrabold uppercase mb-2 text-black">Seehed</h3>
                     <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Product Engineering</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ETHICS PAGE -->
+    <main id="ethics-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
+        <section class="max-w-5xl mx-auto px-6">
+            <div class="bg-black p-20 mb-24 shadow-2xl flex justify-between items-center rounded-sm">
+                <div>
+                    <h2 class="text-6xl font-extrabold text-white mb-4 uppercase tracking-tightest">Our Ethics</h2>
+                    <p class="text-gray-400 text-xs font-extrabold uppercase tracking-widest">A commitment to independence and truth.</p>
+                </div>
+                <img class="h-20 w-auto" src="ethics.svg" alt="Ethics Logo White">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
+                <div>
+                    <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Verifiable Truth</h3>
+                    <p class="text-gray-600 font-medium leading-relaxed mb-6">Information is only as good as its source. Our journalists and data engineers ensure every report is backed by multiple points of verification.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-[10px] font-extrabold uppercase tracking-widest text-ciryablue">
+                            <span class="w-4 h-px bg-ciryablue mr-3"></span> Cross-Platform Authentication
+                        </li>
+                        <li class="flex items-center text-[10px] font-extrabold uppercase tracking-widest text-ciryablue">
+                            <span class="w-4 h-px bg-ciryablue mr-3"></span> Open-Source Intelligence (OSINT)
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Network Resilience</h3>
+                    <p class="text-gray-600 font-medium leading-relaxed mb-6">By maintaining decentralized infrastructure, we ensure that our voice cannot be silenced by centralized gatekeepers.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-[10px] font-extrabold uppercase tracking-widest text-ciryablue">
+                            <span class="w-4 h-px bg-ciryablue mr-3"></span> Censorship Resistance
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -190,52 +347,29 @@
     <main id="legal-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-48">
         <section class="max-w-4xl mx-auto px-6">
             <h2 class="text-6xl font-extrabold mb-24 uppercase tracking-tightest">Legal & Privacy</h2>
-            
             <div class="space-y-24">
                 <div>
                     <h3 class="text-2xl font-extrabold uppercase mb-8 border-b-2 border-black pb-4">Privacy Policy</h3>
                     <p class="text-gray-500 leading-relaxed mb-6 font-medium">Cirya Media Network respects your digital sovereignty. We do not track individual users or sell personal data. Our servers log only essential technical information to maintain stream stability and security.</p>
-                    <p class="text-gray-500 leading-relaxed font-medium">We utilize end-to-end encryption for all corporate communications and internal data transfers.</p>
                 </div>
-
                 <div>
                     <h3 class="text-2xl font-extrabold uppercase mb-8 border-b-2 border-black pb-4">Terms of Service</h3>
-                    <p class="text-gray-500 leading-relaxed font-medium">Use of the Cirya network and radio streams is subject to our network integrity policy. Redistribution of our encrypted feeds without written authorization is prohibited. All digital assets on this platform remain the intellectual property of Cirya Media Network.</p>
+                    <p class="text-gray-500 leading-relaxed font-medium">Use of the Cirya network and radio streams is subject to our network integrity policy. Redistribution of our feeds without authorization is prohibited.</p>
                 </div>
-
                 <div class="bg-gray-100 p-12">
                     <h3 class="text-2xl font-extrabold uppercase mb-6">Legal Contact</h3>
-                    <p class="text-sm font-extrabold uppercase tracking-widest text-ciryablue mb-8">For compliance and copyright inquiries:</p>
                     <a href="mailto:legal@cirya.co" class="text-3xl font-extrabold hover:text-ciryablue transition">legal@cirya.co</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- RADIO PAGE (Simplified placeholder) -->
-    <main id="radio-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-48">
-        <section class="max-w-7xl mx-auto px-6">
-            <h2 class="text-7xl font-extrabold mb-12 uppercase tracking-tightest">Radio One</h2>
-            <div class="bg-black text-white p-16">
-                 <button onclick="toggleAudio()" class="bg-white text-black px-12 py-6 font-extrabold uppercase tracking-widest">Play Stream</button>
-            </div>
-        </section>
-    </main>
-
-    <!-- ETHICS PAGE (Simplified placeholder) -->
-    <main id="ethics-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-48">
-        <section class="max-w-4xl mx-auto px-6">
-            <h2 class="text-7xl font-extrabold mb-12 uppercase tracking-tightest">Ethics</h2>
-            <p class="text-xl font-medium text-gray-500">Information independence and verifiable truth.</p>
-        </section>
-    </main>
-
-    <!-- Banner Update -->
-    <section class="bg-ciryablue py-24 text-white">
+    <!-- Support Banner -->
+    <section class="bg-ciryablue py-20 text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-10">
-            <div>
-                <h4 class="text-4xl md:text-5xl font-extrabold uppercase tracking-tightest mb-4 leading-none">Support the Network</h4>
-                <p class="text-blue-200 text-sm font-extrabold uppercase tracking-widest">Direct communication through our leadership hub.</p>
+            <div class="text-center md:text-left">
+                <h4 class="text-4xl md:text-5xl font-extrabold uppercase tracking-tightest mb-3">Support the Network</h4>
+                <p class="text-blue-200 text-sm font-extrabold uppercase tracking-widest">Connect with our leadership hub.</p>
             </div>
             <button onclick="showPage('leadership')" class="bg-white text-black px-12 py-5 font-extrabold text-sm uppercase tracking-widest hover:bg-black hover:text-white transition rounded-sm">
                 View Personnel
@@ -244,30 +378,28 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black py-40 border-t border-gray-900">
+    <footer class="bg-black py-32 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mb-24">
                 <div>
-                    <img class="h-8 w-auto brightness-0 invert mb-12" src="Group 373.svg" alt="Cirya White">
-                    <p class="text-gray-500 max-w-sm font-medium">A decentralized conglomerate focused on capital growth and high-fidelity intelligence broadcasting.</p>
+                    <img class="h-7 w-auto brightness-0 invert mb-8" src="Group 373.svg" alt="Cirya White">
+                    <p class="text-gray-500 max-w-sm font-medium">Global intelligence network and capital management conglomerate.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-10">
                     <div class="space-y-4 flex flex-col">
                         <span class="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 mb-4">Operations</span>
                         <button onclick="showPage('radio')" class="text-gray-500 hover:text-white text-sm font-extrabold uppercase tracking-widest text-left">Radio</button>
                         <button onclick="showPage('leadership')" class="text-gray-500 hover:text-white text-sm font-extrabold uppercase tracking-widest text-left">Leadership</button>
-                        <button onclick="showPage('ethics')" class="text-gray-500 hover:text-white text-sm font-extrabold uppercase tracking-widest text-left">Ethics</button>
                     </div>
                     <div class="space-y-4 flex flex-col">
                         <span class="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 mb-4">Legal</span>
                         <button onclick="showPage('legal')" class="text-gray-500 hover:text-white text-sm font-extrabold uppercase tracking-widest text-left">Privacy</button>
                         <button onclick="showPage('legal')" class="text-gray-500 hover:text-white text-sm font-extrabold uppercase tracking-widest text-left">Terms</button>
-                        <a href="mailto:contact@cirya.co" class="text-gray-500 hover:text-white text-sm font-extrabold uppercase tracking-widest">Contact</a>
                     </div>
                 </div>
             </div>
             
-            <div class="pt-16 border-t border-gray-900 flex justify-between items-center text-gray-600">
+            <div class="pt-10 border-t border-gray-900 flex justify-between items-center text-gray-500">
                 <p class="text-[10px] font-extrabold uppercase tracking-widest">&copy; 2026 Cirya Media Network</p>
                 <div class="flex items-center space-x-12">
                     <a href="https://x.com/ciryanews" class="text-[10px] font-extrabold uppercase tracking-widest hover:text-white transition">Twitter</a>
