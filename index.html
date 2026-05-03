@@ -83,14 +83,14 @@
         <div class="bg-white/80 backdrop-blur-xl border border-gray-100 shadow-2xl px-6 py-4 flex justify-between items-center rounded-sm">
             <img class="h-6 w-auto cursor-pointer" src="Group 373.svg" alt="Cirya" onclick="showPage('home')">
             <div class="hidden xl:flex space-x-6 items-center">
-                <button onclick="showPage('about')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue">About</button>
-                <button onclick="showPage('radio')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue">Radio</button>
-                <button onclick="showPage('news')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue">News</button>
-                <button onclick="showPage('ethics')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue">Ethics</button>
-                <button onclick="showPage('leadership')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue">Leadership</button>
-                <button onclick="showPage('investors')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue">Investors</button>
-                <button onclick="showPage('eco')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue">Eco Plan</button>
-                <button onclick="showPage('careers')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue">Careers</button>
+                <button onclick="showPage('about')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue transition">About</button>
+                <button onclick="showPage('radio')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue transition">Radio</button>
+                <button onclick="showPage('news')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue transition">News</button>
+                <button onclick="showPage('ethics')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue transition">Ethics</button>
+                <button onclick="showPage('leadership')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue transition">Leadership</button>
+                <button onclick="showPage('investors')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue transition">Investors</button>
+                <button onclick="showPage('eco')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue transition">Eco Plan</button>
+                <button onclick="showPage('careers')" class="nav-btn text-[9px] font-extrabold uppercase tracking-widest text-gray-400 hover:text-ciryablue transition">Careers</button>
             </div>
             <a href="mailto:contact@cirya.co" class="bg-black text-white px-6 py-3 font-extrabold text-[9px] tracking-widest rounded-sm hover:bg-ciryablue transition uppercase">Contact</a>
         </div>
@@ -190,19 +190,23 @@
         <main id="leadership-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
             <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">Leadership.</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-white p-12 border">
-                    <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-24 h-24 grayscale rounded-full mb-6" alt="Hashtag">
-                    <h3 class="text-2xl font-extrabold uppercase">Hashtag</h3>
-                    <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-4">Head of Operations</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">Hashtag manages technical infrastructure for Radio One. He oversees node health and global broadcast stability. His focus is on high fidelity audio distribution.</p>
-                </div>
-                <div class="bg-white p-12 border">
-                    <div class="w-24 h-24 bg-gray-200 rounded-full mb-6 flex items-center justify-center">
-                        <span class="text-gray-400 font-extrabold uppercase">SS</span>
+                <!-- HASHTAG -->
+                <div class="group bg-white p-12 border border-gray-100 hover:border-ciryablue transition-all duration-500">
+                    <div class="overflow-hidden mb-8 w-48 h-48 rounded-sm">
+                        <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" alt="Hashtag">
                     </div>
-                    <h3 class="text-2xl font-extrabold uppercase">Sofia Sagala</h3>
-                    <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-4">Personnel Manager</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">Sofia leads the talent acquisition and team management for Cirya projects. She ensures that every node has the proper human intelligence to remain operational.</p>
+                    <h3 class="text-3xl font-extrabold uppercase tracking-tightest">Hashtag</h3>
+                    <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-6">Head of Operations</p>
+                    <p class="text-gray-500 font-medium leading-relaxed">Hashtag directs technical infrastructure. He manages node health. He ensures broadcast stability across the network. His focus remains on high fidelity audio distribution.</p>
+                </div>
+                <!-- SOFIA SAGALA -->
+                <div class="group bg-white p-12 border border-gray-100 hover:border-ciryablue transition-all duration-500">
+                    <div class="overflow-hidden mb-8 w-48 h-48 bg-gray-200 flex items-center justify-center rounded-sm">
+                        <span class="text-gray-400 font-extrabold text-4xl group-hover:text-ciryablue transition-colors duration-700">SS</span>
+                    </div>
+                    <h3 class="text-3xl font-extrabold uppercase tracking-tightest">Sofia Sagala</h3>
+                    <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-6">Personnel Manager</p>
+                    <p class="text-gray-500 font-medium leading-relaxed">Sofia leads talent acquisition. She manages the leadership team for media projects. She ensures every node has the proper human intelligence to remain operational.</p>
                 </div>
             </div>
         </main>
