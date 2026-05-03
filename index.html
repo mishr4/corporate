@@ -37,7 +37,6 @@
             const pages = ['home', 'ethics', 'leadership', 'radio', 'investors', 'news', 'careers', 'about', 'eco', 'legal'];
             const logo = document.getElementById('main-nav-logo');
             
-            // Dynamic Logo Logic
             if (hash === 'radio') {
                 logo.src = 'radio-logo.svg';
             } else if (hash === 'ethics') {
@@ -132,7 +131,6 @@
                     </div>
                 </div>
 
-                <!-- RECENT ACTIVITY FEED -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     <div class="lg:col-span-2 space-y-12">
                         <h4 class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-ciryablue mb-8">Network Intelligence Feed</h4>
@@ -140,19 +138,13 @@
                         <div class="border-l-4 border-black pl-8 py-2">
                             <p class="text-[9px] font-extrabold text-gray-400 uppercase mb-2">System Broadcast • 2 hours ago</p>
                             <h5 class="text-2xl font-extrabold uppercase mb-4">Node-07 Infrastructure Finalized</h5>
-                            <p class="text-gray-500 leading-relaxed max-w-xl">We deployed the Southeast Asia infrastructure core. This expansion supports high fidelity audio distribution across the Pacific corridor.</p>
+                            <p class="text-gray-500 leading-relaxed max-w-xl">Southeast Asia infrastructure core deployment complete. Expansion supports high-fidelity audio distribution across the Pacific corridor.</p>
                         </div>
 
                         <div class="border-l-4 border-ciryablue pl-8 py-2">
                             <p class="text-[9px] font-extrabold text-gray-400 uppercase mb-2">Technical Update • 14 hours ago</p>
                             <h5 class="text-2xl font-extrabold uppercase mb-4">Supabase Staff Protocols Active</h5>
-                            <p class="text-gray-500 leading-relaxed max-w-xl">Internal authentication for Cirya Radio is now live. We have integrated decentralized identity management for all leadership personnel.</p>
-                        </div>
-
-                        <div class="border-l-4 border-black pl-8 py-2">
-                            <p class="text-[9px] font-extrabold text-gray-400 uppercase mb-2">Project Milestone • 1 day ago</p>
-                            <h5 class="text-2xl font-extrabold uppercase mb-4">Astera Core Optimization</h5>
-                            <p class="text-gray-500 leading-relaxed max-w-xl">Our non-AI web functionality engine reached version 2.0 stability. We continue to prioritize manual engineering over algorithmic generation.</p>
+                            <p class="text-gray-500 leading-relaxed max-w-xl">Internal authentication for Cirya Radio is now live. Decentralized identity management integrated for all leadership personnel.</p>
                         </div>
                     </div>
 
@@ -176,9 +168,6 @@
                                 <span class="text-[9px] text-green-500 font-extrabold">Active</span>
                             </li>
                         </ul>
-                        <div class="mt-12">
-                            <p class="text-[8px] text-gray-500 uppercase tracking-widest leading-loose">Total Network Throughput: <br> 42.8 TB/hr</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -211,39 +200,7 @@
                 </div>
                 <div class="bg-white p-12 border">
                     <h4 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Technical Info</h4>
-                    <p class="text-gray-500 font-medium leading-relaxed">Cirya Radio utilizes high-fidelity MP3 encoding for global transmission. Our stream includes automated metadata synchronization for title and artist tracking across all nodes.</p>
-                </div>
-            </div>
-        </main>
-
-        <!-- NEWS PAGE -->
-        <main id="news-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">Newswire.</h2>
-            <div class="space-y-8">
-                <div class="bg-white p-12 border border-gray-100">
-                    <p class="text-[10px] font-extrabold text-ciryablue uppercase tracking-widest mb-2">May 2026</p>
-                    <h3 class="text-2xl font-extrabold uppercase mb-4">Node-07 Deployment</h3>
-                    <p class="text-gray-500 leading-relaxed">Cirya begins expansion of the seventh global infrastructure node. This expansion increases capacity for high-fidelity audio streams in the Southeast Asia sector.</p>
-                </div>
-                <div class="bg-white p-12 border border-gray-100">
-                    <p class="text-[10px] font-extrabold text-ciryablue uppercase tracking-widest mb-2">April 2026</p>
-                    <h3 class="text-2xl font-extrabold uppercase mb-4">Radio One Launch</h3>
-                    <p class="text-gray-500 leading-relaxed">Technical infrastructure for Radio One is now operational. The station integrates staff authentication through Supabase protocols.</p>
-                </div>
-            </div>
-        </main>
-
-        <!-- ETHICS PAGE -->
-        <main id="ethics-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">Ethics.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-white p-12 border border-gray-100">
-                    <h3 class="text-3xl font-extrabold uppercase mb-6">Data Sovereignty</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed mb-6">Your data belongs to you. Cirya enforces a strict zero footprint policy. We do not track user behavior or sell metadata. We build tools for privacy and security. Our servers utilize end to end encryption for all internal traffic. We believe the internet should be a tool for the individual, not the corporation.</p>
-                </div>
-                <div class="bg-white p-12 border border-gray-100">
-                    <h3 class="text-3xl font-extrabold uppercase mb-6">Social Utility</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed mb-6">We convert technical errors into social good. Every 404 page on our network serves an awareness card for missing children. We use our global bandwidth to find lost people. This initiative is hard coded into our infrastructure. Every missed connection is an opportunity to help someone return home.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed">Cirya Radio utilizes high-fidelity MP3 encoding. Our stream includes automated metadata synchronization for global tracking across all nodes.</p>
                 </div>
             </div>
         </main>
@@ -259,7 +216,7 @@
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase tracking-tightest">Alex Mishra</h3>
                     <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-6">Product Engineer</p>
-                    <p class="text-gray-500 font-medium leading-relaxed">Alex Mishra leads platform development. He designs the digital interface and builds the technical backbone of the network.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed">Alex Mishra leads platform development and builds the technical backbone of the network.</p>
                 </div>
                 <!-- SOFIA SAGALA -->
                 <div class="group bg-white p-12 border border-gray-100 hover:border-ciryablue transition-all duration-500">
@@ -268,16 +225,16 @@
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase tracking-tightest">Sofia Sagala</h3>
                     <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-6">Personnel Manager</p>
-                    <p class="text-gray-500 font-medium leading-relaxed">Sofia Sagala manages the leadership team and personnel operations. She ensures project alignment across the media and tech divisions.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed">Sofia Sagala manages the leadership team and ensures project alignment across media divisions.</p>
                 </div>
                 <!-- HASHTAG -->
                 <div class="group bg-white p-12 border border-gray-100 hover:border-ciryablue transition-all duration-500">
                     <div class="overflow-hidden mb-8 w-48 h-48 rounded-sm">
-                        <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" alt="Hashtag">
+                        <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Hashtag">
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase tracking-tightest">Hashtag</h3>
                     <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-6">Head of Operations</p>
-                    <p class="text-gray-500 font-medium leading-relaxed">Hashtag directs technical infrastructure. He manages node health and ensures broadcast stability.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed">Hashtag directs technical infrastructure and manages node health.</p>
                 </div>
                 <!-- SEEHED -->
                 <div class="group bg-white p-12 border border-gray-100 hover:border-ciryablue transition-all duration-500">
@@ -286,7 +243,7 @@
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase tracking-tightest">SeehED</h3>
                     <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-6">Audio Architect</p>
-                    <p class="text-gray-500 font-medium leading-relaxed">SeehED develops audio protocols. He optimizes global streams and maintains the integrity of high fidelity assets.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed">SeehED develops audio protocols and optimizes global streams.</p>
                 </div>
                 <!-- CODY -->
                 <div class="group bg-white p-12 border border-gray-100 hover:border-ciryablue transition-all duration-500">
@@ -295,51 +252,22 @@
                     </div>
                     <h3 class="text-3xl font-extrabold uppercase tracking-tightest">Cody</h3>
                     <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest mb-6">Network Engineer</p>
-                    <p class="text-gray-500 font-medium leading-relaxed">Cody manages global deployment. He scales network infrastructure and ensures 99.9 percent uptime for all nodes.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed">Cody scales network infrastructure and maintains uptime for global nodes.</p>
                 </div>
             </div>
         </main>
 
-        <!-- INVESTORS PAGE -->
-        <main id="investors-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">Investors.</h2>
-            <div class="bg-white border p-12">
-                <h3 class="text-3xl font-extrabold uppercase mb-6">Private Conglomerate</h3>
-                <p class="text-gray-500 font-medium leading-relaxed max-w-4xl">Cirya operates as a private entity. We prioritize long term infrastructure stability over short term gains. We seek partners who value digital sovereignty. Our capital is deployed into node expansion and proprietary audio technology. We do not participate in public markets. Our growth is driven by technical excellence.</p>
-            </div>
-        </main>
-
-        <!-- CAREERS PAGE -->
-        <main id="careers-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">Careers.</h2>
-            <div class="bg-white border p-12">
-                <h3 class="text-3xl font-extrabold uppercase mb-6">Build the Future</h3>
-                <p class="text-gray-500 font-medium leading-relaxed mb-8">We are looking for architects and engineers. You must have a passion for decentralized networks. We value privacy and technical rigor. If you want to build the backbone of the internet, you belong here.</p>
-                <div class="space-y-4">
-                    <div class="p-6 border bg-gray-50 flex justify-between items-center">
-                        <span class="font-bold uppercase text-xs">Node Systems Engineer</span>
-                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-ciryablue">Remote</span>
-                    </div>
-                    <div class="p-6 border bg-gray-50 flex justify-between items-center">
-                        <span class="font-bold uppercase text-xs">Audio Stream Architect</span>
-                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-ciryablue">California</span>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- ECO PLAN PAGE -->
-        <main id="eco-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest leading-none">Sustainability <br>& Awareness.</h2>
+        <!-- ETHICS PAGE -->
+        <main id="ethics-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
+            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">Ethics.</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="bg-white p-12 border border-gray-100">
-                    <span class="text-[10px] font-extrabold text-red-600 uppercase tracking-widest mb-6 block">404 Awareness Initiative</span>
-                    <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Lost Connections</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed">We utilize every technical error on our network to highlight missing children cases. If a page cannot be found, we ensure a child can be. Every 404 page across the Cirya ecosystem is hard coded to display awareness cards from national databases.</p>
+                    <h3 class="text-3xl font-extrabold uppercase mb-6">Data Sovereignty</h3>
+                    <p class="text-gray-500 font-medium leading-relaxed">Cirya enforces a strict zero footprint policy. We do not track user behavior or sell metadata. We build tools for privacy and security.</p>
                 </div>
                 <div class="bg-white p-12 border border-gray-100">
-                    <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Node Efficiency</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed">Our infrastructure operates on decentralized nodes that prioritize renewable energy sources. We optimize code to reduce the thermal output of server clusters, ensuring minimal environmental impact per broadcast hour.</p>
+                    <h3 class="text-3xl font-extrabold uppercase mb-6">Social Utility</h3>
+                    <p class="text-gray-500 font-medium leading-relaxed">Every 404 page serves an awareness card for missing children. We use our global bandwidth to find lost people.</p>
                 </div>
             </div>
         </main>
@@ -347,40 +275,16 @@
         <!-- ABOUT PAGE -->
         <main id="about-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
             <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">The Identity.</h2>
-            <p class="text-2xl text-gray-500 font-medium leading-relaxed max-w-4xl">Cirya Media Network is a private conglomerate specializing in digital infrastructure. We operate with zero footprint protocols and prioritize privacy over data collection. Our network spans six global nodes, delivering capital and intelligence through advanced technical platforms. Astera is a core project focused on web functionality without the use of artificial intelligence.</p>
+            <p class="text-2xl text-gray-500 font-medium leading-relaxed max-w-4xl">Cirya Media Network is a private conglomerate specializing in digital infrastructure. We operate with zero footprint protocols and prioritize privacy. Our network spans six global nodes.</p>
         </main>
 
-        <!-- LEGAL PAGE -->
-        <main id="legal-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">Legal.</h2>
-            <div class="bg-white border p-12">
-                <h3 class="text-3xl font-extrabold uppercase mb-6">Terms of Sovereignty</h3>
-                <p class="text-gray-500 font-medium leading-relaxed">By accessing our nodes, you agree to our privacy standards. We do not collect cookies. We do not share data with third parties. All technical assets are property of Cirya Media Network. We reserve the right to modify node infrastructure without notice to maintain network health.</p>
-            </div>
-        </main>
     </div>
 
     <!-- FOOTER -->
     <footer class="bg-black text-white pt-24 pb-16 mt-auto">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center space-y-12 md:space-y-0">
-                <div class="flex flex-col items-center md:items-start space-y-4">
-                    <img class="footer-logo h-8 w-auto opacity-80" src="Group 373.svg" alt="Cirya Network Core">
-                    <span class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-gray-500">Network Core</span>
-                </div>
-                
-                <div class="flex flex-wrap justify-center gap-8 text-[9px] font-extrabold uppercase tracking-widest text-gray-500">
-                    <button onclick="showPage('ethics')" class="hover:text-white transition">Ethics</button>
-                    <button onclick="showPage('legal')" class="hover:text-white transition">Legal</button>
-                    <button onclick="showPage('investors')" class="hover:text-white transition">Investors</button>
-                    <button onclick="showPage('about')" class="hover:text-white transition">About</button>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-900 mt-16 pt-8 flex justify-between items-center text-[8px] font-extrabold uppercase tracking-widest text-gray-700">
-                <p>&copy; 2026 Cirya Media Network. All Rights Reserved.</p>
-                <p>Node Status: Operational</p>
-            </div>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img class="footer-logo h-8 w-auto mx-auto mb-8 opacity-80" src="Group 373.svg" alt="Cirya">
+            <p class="text-[8px] font-extrabold uppercase tracking-widest text-gray-700">&copy; 2026 Cirya Media Network. All Rights Reserved.</p>
         </div>
     </footer>
 
