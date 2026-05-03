@@ -3,114 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cirya Media Network | Decentralized Audio Infrastructure</title>
+    <title>Cirya Media Network | Enterprise Digital Infrastructure</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(90deg, #ffffff, #a1a1a1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card { background: #0a0a0a; border: 1px solid #1a1a1a; transition: all 0.3s ease; }
-        .card:hover { border-color: #333; transform: translateY(-2px); }
+        :root { --accent: #ffffff; --bg: #050505; --card: #0c0c0c; --border: #1a1a1a; }
+        body { background-color: var(--bg); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass-nav { backdrop-filter: blur(12px); background: rgba(5, 5, 5, 0.8); border-bottom: 1px solid var(--border); }
+        .gradient-text { background: linear-gradient(135deg, #fff 0%, #666 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-padding { padding: 100px 0; }
+        .feature-card { background: var(--card); border: 1px solid var(--border); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .feature-card:hover { border-color: #444; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .status-dot { height: 8px; width: 8px; background-color: #10b981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+        .sidebar-link { color: #666; transition: 0.2s; cursor: pointer; }
+        .sidebar-link:hover { color: #fff; }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- Navigation -->
-    <nav class="flex justify-between items-center px-8 py-6 border-b border-white/5">
-        <div class="text-xl font-bold tracking-tighter">CIRYA.</div>
-        <div class="space-x-8 text-sm font-medium text-gray-400">
-            <a href="#infrastructure" class="hover:text-white">Infrastructure</a>
-            <a href="#leadership" class="hover:text-white">Leadership</a>
-            <a href="https://cirya.co/careers" class="text-white border-b border-white/20 pb-1">Careers</a>
+    <!-- Persistent Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <span class="text-2xl font-extrabold tracking-tighter uppercase">Cirya</span>
+                <div class="hidden md:flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+                    <span class="status-dot"></span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Network Operational</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex gap-10 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#vision" class="hover:text-white">Vision</a>
+                <a href="#nodes" class="hover:text-white">Infrastructure</a>
+                <a href="#ethics" class="hover:text-white">Ethics</a>
+                <a href="#team" class="hover:text-white">Leadership</a>
+                <a href="https://cirya.co/careers" class="text-white">Careers</a>
+            </div>
+            <button class="bg-white text-black px-5 py-2 text-xs font-bold rounded-full">Terminal Access</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="max-w-6xl mx-auto pt-24 pb-16 px-6 text-center">
-        <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-6 gradient-text">Audio infrastructure <br>for the next web.</h1>
-        <p class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Decentralized node distribution, high-fidelity broadcasting, and technical stability for global media assets.
-        </p>
-    </header>
+    <!-- Main Content Grid -->
+    <main class="pt-24">
+        
+        <!-- Hero Module (Page 1 Equivalent) -->
+        <section class="max-w-7xl mx-auto px-6 py-24 border-b border-white/5">
+            <div class="max-w-4xl">
+                <h1 class="text-7xl md:text-9xl font-extrabold tracking-tighter mb-8 gradient-text leading-[0.9]">Architecting Digital Sovereignty.</h1>
+                <p class="text-xl text-gray-500 leading-relaxed max-w-2xl">
+                    Cirya Media Network is a specialized digital infrastructure firm providing high-fidelity audio assets, decentralized node health, and secure API protocols for the global enterprise.
+                </p>
+                <div class="mt-12 flex gap-4">
+                    <a href="#nodes" class="px-8 py-4 bg-white text-black font-bold rounded-xl text-sm">Explore Infrastructure</a>
+                    <a href="#ethics" class="px-8 py-4 bg-transparent border border-white/20 font-bold rounded-xl text-sm">The Ethics Charter</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Infrastructure Pillars -->
-    <section id="infrastructure" class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-6 py-12">
-        <div class="card p-8 rounded-2xl">
-            <h3 class="text-white font-semibold mb-3">Global Nodes</h3>
-            <p class="text-gray-400 text-sm">Low-latency distribution across North America, Europe, SE Asia, and Latin America.</p>
-        </div>
-        <div class="card p-8 rounded-2xl">
-            <h3 class="text-white font-semibold mb-3">Radio One</h3>
-            <p class="text-gray-400 text-sm">Automated metadata injection and secure API endpoints for broadcast integrity.</p>
-        </div>
-        <div class="card p-8 rounded-2xl">
-            <h3 class="text-white font-semibold mb-3">Ethics Charter</h3>
-            <p class="text-gray-400 text-sm">Zero user tracking and decentralized asset management by design.</p>
-        </div>
-    </section>
+        <!-- Global Nodes (Pages 2-5 Equivalent) -->
+        <section id="nodes" class="max-w-7xl mx-auto px-6 section-padding">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gray-500 mb-4">Infrastructure</h2>
+                    <h3 class="text-4xl font-bold mb-6 leading-tight">Global Distribution Network</h3>
+                    <p class="text-gray-400 mb-8">We maintain high-performance server clusters across four key continents to ensure zero-latency audio delivery.</p>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li class="flex justify-between border-b border-white/5 pb-2"><span>North America</span> <span class="text-white">Active (32 Nodes)</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-2"><span>Europe</span> <span class="text-white">Active (18 Nodes)</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-2"><span>Southeast Asia</span> <span class="text-white">Operational</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-2"><span>Latin America</span> <span class="text-white">Standby</span></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-8 grid md:grid-cols-2 gap-4">
+                    <div class="feature-card p-10 rounded-3xl">
+                        <div class="mb-6 opacity-40 italic text-sm">Node Reliability Protocol v4.2</div>
+                        <h4 class="text-xl font-bold mb-4">99.9% Core Uptime</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Our decentralized architecture utilizes Supabase authentication and distributed database logic to prevent single points of failure across the Radio One feed.</p>
+                    </div>
+                    <div class="feature-card p-10 rounded-3xl">
+                        <div class="mb-6 opacity-40 italic text-sm">Environmental Commitment</div>
+                        <h4 class="text-xl font-bold mb-4">Eco-Plan 2026</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Cirya optimizes every cluster for minimal carbon output, utilizing renewable energy credits for our primary data operations in California and Hawaii.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Leadership Section -->
-    <section id="leadership" class="max-w-6xl mx-auto px-6 py-20">
-        <h2 class="text-3xl font-bold mb-12">Network Leadership</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Social Responsibility (Page 6-8 Equivalent) -->
+        <section class="bg-white text-black section-padding">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
+                <div class="flex-1">
+                    <h2 class="text-6xl font-extrabold tracking-tighter mb-6 italic">Missing Children 404.</h2>
+                    <p class="text-lg leading-relaxed mb-8">Instead of dead air or broken links, every technical failure on the Cirya Network is repurposed. Our 404 pages display information on missing children, leveraging network traffic for social restoration.</p>
+                    <button class="bg-black text-white px-8 py-3 font-bold text-sm rounded-full">Learn More</button>
+                </div>
+                <div class="flex-1 bg-gray-100 p-12 rounded-3xl border border-black/5">
+                    <div class="text-xs font-bold uppercase mb-4 opacity-50">Current Alert Pool</div>
+                    <div class="space-y-6">
+                        <div class="h-1 bg-black w-full opacity-10"></div>
+                        <p class="text-3xl font-light italic">"Every impression counts toward a reunion."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Directory (Pages 9-15 Equivalent) -->
+        <section id="team" class="max-w-7xl mx-auto px-6 section-padding">
+            <div class="mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gray-500 mb-4">Leadership</h2>
+                <h3 class="text-5xl font-bold">The Strategic Board.</h3>
+            </div>
             
-            <!-- Alex Mishra -->
-            <div class="space-y-4">
-                <img src="https://i.ibb.co/5b56PPg/Rectangle-59.png" alt="Alex Mishra" class="w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500">
-                <div>
-                    <h4 class="font-bold">Alex Mishra</h4>
-                    <p class="text-xs text-gray-500 uppercase tracking-widest">CEO | Chief Executive Officer</p>
-                    <p class="text-sm text-gray-400 mt-2">Visionary lead overseeing high-level strategy and executive leadership.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Alex Mishra -->
+                <div class="group">
+                    <div class="overflow-hidden rounded-2xl mb-6">
+                        <img src="https://i.ibb.co/5b56PPg/Rectangle-59.png" class="w-full aspect-[4/5] object-cover grayscale transition duration-500 group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <h4 class="text-xl font-bold">Alex Mishra</h4>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Chief Executive Officer (CEO)</p>
+                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">Provides primary vision and executive leadership, overseeing high-level strategy and administrative operations for the entire network.</p>
+                </div>
+
+                <!-- Cody Devbro -->
+                <div class="group">
+                    <div class="overflow-hidden rounded-2xl mb-6">
+                        <img src="https://i.ibb.co/QvjvNSFB/Rectangle-61.png" class="w-full aspect-[4/5] object-cover grayscale transition duration-500 group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <h4 class="text-xl font-bold">Cody Devbro</h4>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Chief Technology Officer (CTO)</p>
+                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">Leads technical direction, managing the development stack and ensuring the stability of all digital infrastructure across England and the EU.</p>
+                </div>
+
+                <!-- Hashtag Cyberistic -->
+                <div class="group">
+                    <div class="overflow-hidden rounded-2xl mb-6">
+                        <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-full aspect-[4/5] object-cover grayscale transition duration-500 group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <h4 class="text-xl font-bold">Hashtag Cyberistic</h4>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Chief Operating Officer (COO)</p>
+                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">Combines operational management with a focus on broadcasting and radio divisions, ensuring alignment with long-term network goals.</p>
+                </div>
+
+                <!-- Seehed Shaffer -->
+                <div class="group">
+                    <div class="overflow-hidden rounded-2xl mb-6">
+                        <img src="https://i.ibb.co/QF6W9sH1/Rectangle-60.png" class="w-full aspect-[4/5] object-cover grayscale transition duration-500 group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <h4 class="text-xl font-bold">Seehed Shaffer</h4>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Chief Visionary Officer (CVO)</p>
+                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">Creative lead and developer focusing on future-facing aspects of the brand and core technical build-out of internal projects.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Cody Devbro -->
-            <div class="space-y-4">
-                <img src="https://i.ibb.co/QvjvNSFB/Rectangle-61.png" alt="Cody Devbro" class="w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500">
-                <div>
-                    <h4 class="font-bold">Cody Devbro</h4>
-                    <p class="text-xs text-gray-500 uppercase tracking-widest">CTO | Chief Technology Officer</p>
-                    <p class="text-sm text-gray-400 mt-2">Directs the technical stack and digital infrastructure stability.</p>
+        <!-- Ethics & Charter (Pages 16-20 Equivalent) -->
+        <section id="ethics" class="border-t border-white/5 py-32">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="bg-[#111] p-16 rounded-[40px] border border-white/10">
+                    <h2 class="text-4xl font-bold mb-10">The Cirya Ethics Charter</h2>
+                    <div class="space-y-12">
+                        <div>
+                            <span class="text-white font-bold block mb-2">01. Neural Neutrality</span>
+                            <p class="text-gray-500 text-sm leading-relaxed">We provide infrastructure that is inherently neutral. Data is delivered without mediation or biased routing protocols.</p>
+                        </div>
+                        <div>
+                            <span class="text-white font-bold block mb-2">02. Zero-Retention Policy</span>
+                            <p class="text-gray-500 text-sm leading-relaxed">Cirya does not harvest, store, or sell user metadata. Our business model relies on infrastructure lease, not information extraction.</p>
+                        </div>
+                        <div>
+                            <span class="text-white font-bold block mb-2">03. Decentralized Identity</span>
+                            <p class="text-gray-500 text-sm leading-relaxed">Staff and partner authentication is handled through decentralized protocols, ensuring that access remains secure and private.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Hashtag Cyberistic -->
-            <div class="space-y-4">
-                <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" alt="Hashtag" class="w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500">
-                <div>
-                    <h4 class="font-bold">Hashtag Cyberistic</h4>
-                    <p class="text-xs text-gray-500 uppercase tracking-widest">COO | Chief Operating Officer</p>
-                    <p class="text-sm text-gray-400 mt-2">Operational management lead for radio and broadcasting divisions.</p>
+        <!-- Careers Call to Action (The "Final Page") -->
+        <section class="max-w-7xl mx-auto px-6 py-32 text-center">
+            <h2 class="text-6xl font-bold mb-6">Join the Network.</h2>
+            <p class="text-gray-400 mb-12 max-w-xl mx-auto">We are actively recruiting specialists for our 2026 expansion phases. Your contribution defines the next web.</p>
+            <a href="https://cirya.co/careers" class="inline-flex items-center gap-4 bg-white text-black px-12 py-5 rounded-2xl font-bold hover:scale-95 transition active:scale-100">
+                Browse Careers <span class="text-xl">→</span>
+            </a>
+            
+            <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-left border-t border-white/5 pt-12">
+                <div class="space-y-4">
+                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Platform</h5>
+                    <div class="flex flex-col gap-2 text-sm text-gray-500">
+                        <a href="#">Infrastructure</a>
+                        <a href="#">Radio One</a>
+                        <a href="#">API Docs</a>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Company</h5>
+                    <div class="flex flex-col gap-2 text-sm text-gray-500">
+                        <a href="#">Leadership</a>
+                        <a href="#">Ethics</a>
+                        <a href="https://cirya.co/careers">Careers</a>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Legal</h5>
+                    <div class="flex flex-col gap-2 text-sm text-gray-500">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Support</h5>
+                    <div class="flex flex-col gap-2 text-sm text-gray-500">
+                        <a href="#">Help Center</a>
+                        <a href="#">Status</a>
+                        <a href="#">Contact</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Seehed Shaffer -->
-            <div class="space-y-4">
-                <img src="https://i.ibb.co/QF6W9sH1/Rectangle-60.png" alt="Seehed" class="w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500">
-                <div>
-                    <h4 class="font-bold">Seehed Shaffer</h4>
-                    <p class="text-xs text-gray-500 uppercase tracking-widest">CVO | Chief Visionary Officer</p>
-                    <p class="text-sm text-gray-400 mt-2">Lead Developer focusing on creative direction and technical build-out.</p>
-                </div>
-            </div>
+    </main>
 
-        </div>
-    </section>
-
-    <!-- Careers Call to Action -->
-    <section class="max-w-6xl mx-auto px-6 py-24 text-center border-t border-white/5">
-        <h2 class="text-4xl font-bold mb-6">Build the future of media.</h2>
-        <p class="text-gray-400 mb-10 max-w-xl mx-auto">We are looking for Product Engineers and Technical Directors to join our decentralized network.</p>
-        <a href="https://cirya.co/careers" class="inline-block bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-200 transition">View Openings</a>
-    </section>
-
-    <!-- Footer -->
-    <footer class="px-8 py-12 border-t border-white/5 text-gray-500 text-xs flex flex-col md:flex-row justify-between items-center gap-6">
-        <div>© 2026 Cirya Media Network. All Rights Reserved.</div>
-        <div class="flex gap-8">
-            <a href="#" class="hover:text-white">Security</a>
-            <a href="#" class="hover:text-white">Eco Plan</a>
-            <a href="#" class="hover:text-white">Ethics Charter</a>
-        </div>
+    <footer class="py-12 px-8 text-center text-gray-600 text-[10px] font-bold uppercase tracking-[0.2em]">
+        © 2026 Cirya Media Network. Decentralized in California. Global in Reach.
     </footer>
 
 </body>
