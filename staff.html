@@ -7,18 +7,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // CONFIGURATION
+        // CLIENT INITIALIZATION
         const SUPABASE_URL = 'https://onqhdxzmsvmelmdohcxv.supabase.co';
         const SUPABASE_KEY = 'sb_publishable_tQCI0V0US56Iu70ETzN1UQ_GvhY-LKz';
         const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
         async function signInWithGoogle() {
-            console.log("Initiating SSO for corporate.cirya.co...");
             try {
                 const { error } = await supabase.auth.signInWithOAuth({
                     provider: 'google',
                     options: { 
-                        // Fix: Explicitly point to the clean /staff URL
+                        // MATCHES YOUR DASHBOARD CONFIG
                         redirectTo: 'https://corporate.cirya.co/staff',
                         queryParams: { 
                             hd: 'cirya.co', 
@@ -28,8 +27,7 @@
                 });
                 if (error) throw error;
             } catch (err) {
-                console.error("Auth Error:", err.message);
-                alert("Auth Error: " + err.message);
+                alert("Terminal Error: " + err.message);
             }
         }
 
@@ -37,95 +35,55 @@
             const { data: { user } } = await supabase.auth.getUser();
             const authContainer = document.getElementById('auth-container');
             const cmsContainer = document.getElementById('cms-container');
-            const errorMsg = document.getElementById('error-msg');
 
             if (user) {
-                // DOMAIN GATE
                 if (user.email.endsWith('@cirya.co')) {
                     authContainer.classList.add('hidden');
                     cmsContainer.classList.remove('hidden');
                     document.getElementById('user-email').innerText = user.email;
                 } else {
-                    errorMsg.innerText = "ACCESS DENIED: @CIRYA.CO ACCOUNT REQUIRED.";
-                    setTimeout(async () => {
-                        await supabase.auth.signOut();
-                        window.location.reload();
-                    }, 3000);
+                    document.getElementById('error-msg').innerText = "ACCESS DENIED: @CIRYA.CO REQUIRED.";
+                    await supabase.auth.signOut();
                 }
             }
-        }
-
-        async function logout() {
-            await supabase.auth.signOut();
-            window.location.href = 'https://corporate.cirya.co/staff';
         }
 
         window.onload = checkUser;
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
 <body class="bg-white text-black antialiased flex flex-col min-h-screen">
 
-    <!-- AUTHENTICATION SCREEN -->
     <div id="auth-container" class="flex-grow flex items-center justify-center px-6">
         <div class="max-w-md w-full border-t-[12px] border-black pt-16">
             <h1 class="text-7xl font-extrabold uppercase leading-[0.85] mb-6 tracking-tighter">Staff<br>Access.</h1>
-            <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] mb-12">Authorized Personnel Only</p>
+            <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] mb-12">Cirya Media Network Management</p>
             
-            <button onclick="signInWithGoogle()" class="group w-full bg-black text-white py-6 text-[11px] font-black uppercase tracking-widest hover:bg-[#3b28cc] transition-all flex items-center justify-center gap-4">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.92 3.36-2.04 4.48-1.2 1.2-3.04 2.48-5.8 2.48-4.68 0-8.52-3.8-8.52-8.48s3.84-8.48 8.52-8.48c2.52 0 4.4 1 5.8 2.32l2.32-2.32C18.44 1.96 15.84 1 12.48 1c-6.08 0-11 4.92-11 11s4.92 11 11 11c3.28 0 5.8-1.08 7.72-3.08 2-2 2.68-4.8 2.68-7.08 0-.52-.04-1.04-.12-1.52h-7.76z"/></svg>
+            <button onclick="signInWithGoogle()" class="w-full bg-black text-white py-6 text-[11px] font-black uppercase tracking-widest hover:bg-[#3b28cc] transition flex items-center justify-center gap-4">
                 Continue with SSO
             </button>
             <p id="error-msg" class="text-[10px] font-bold text-red-600 mt-10 uppercase tracking-widest text-center"></p>
         </div>
     </div>
 
-    <!-- CMS INTERFACE -->
     <div id="cms-container" class="hidden px-10 py-24 max-w-screen-2xl mx-auto w-full">
         <header class="flex justify-between items-end border-b-4 border-black pb-10 mb-16">
             <div>
                 <p class="text-[11px] font-black text-[#3b28cc] uppercase tracking-widest mb-3">Operator: <span id="user-email" class="text-black"></span></p>
                 <h2 class="text-8xl font-extrabold uppercase tracking-tighter">Terminal.</h2>
             </div>
-            <button onclick="logout()" class="text-[10px] font-black uppercase tracking-widest border-2 border-black px-10 py-4 hover:bg-black hover:text-white transition">Terminate</button>
+            <button onclick="supabase.auth.signOut().then(() => window.location.reload())" class="text-[10px] font-black uppercase tracking-widest border-2 border-black px-10 py-4">Terminate</button>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
-            <div class="lg:col-span-8 space-y-20">
-                <!-- NEWS DISPATCH -->
-                <section>
-                    <h3 class="text-xs font-black uppercase tracking-widest mb-8 flex items-center gap-4">
-                        <span class="w-2 h-2 bg-[#3b28cc]"></span> Intel Dispatch
-                    </h3>
-                    <div class="bg-gray-50 p-12">
-                        <input type="text" placeholder="BULLETIN HEADER" class="w-full bg-transparent border-b-2 border-black py-6 outline-none font-bold uppercase text-4xl placeholder:text-gray-200">
-                        <textarea placeholder="SYSTEM DATA INPUT..." rows="6" class="w-full bg-transparent border-b border-gray-200 py-6 outline-none text-sm font-medium leading-relaxed mt-4"></textarea>
-                        <div class="flex justify-end mt-10">
-                            <button class="bg-black text-white px-12 py-5 text-[11px] font-black uppercase tracking-widest hover:bg-[#3b28cc]">Sync to Network</button>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="lg:col-span-4">
-                <div class="bg-black text-white p-12">
-                    <h4 class="text-[11px] font-black uppercase tracking-widest text-[#3b28cc] mb-12">Infrastructure Status</h4>
-                    <div class="space-y-8">
-                        <div class="flex justify-between items-center border-b border-white/10 pb-4">
-                            <span class="text-[10px] font-bold uppercase">Node-01</span>
-                            <span class="text-[9px] font-black text-green-500">ONLINE</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-white/10 pb-4">
-                            <span class="text-[10px] font-bold uppercase">Node-07</span>
-                            <span class="text-[9px] font-black text-yellow-500">SYNCING</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <section class="bg-gray-50 p-12 max-w-4xl">
+            <h3 class="text-xs font-black uppercase tracking-widest mb-8">Dispatch Center</h3>
+            <input type="text" placeholder="BULLETIN HEADER" class="w-full bg-transparent border-b-2 border-black py-6 outline-none font-bold uppercase text-4xl">
+            <textarea placeholder="INPUT DATA..." rows="4" class="w-full bg-transparent border-b border-gray-200 py-6 outline-none mt-4"></textarea>
+            <button class="mt-10 bg-black text-white px-12 py-5 text-[11px] font-black uppercase tracking-widest">Push to Network</button>
+        </section>
     </div>
 </body>
 </html>
