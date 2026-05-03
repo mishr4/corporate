@@ -68,7 +68,7 @@
         @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased min-h-screen">
+<body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col">
 
     <!-- STOCK TICKER -->
     <div class="fixed top-0 left-0 w-full bg-black text-[10px] font-extrabold uppercase tracking-widest py-2 text-white z-[110]">
@@ -95,92 +95,114 @@
         </div>
     </nav>
 
-    <!-- HOME PAGE -->
-    <main id="home" class="page-transition pt-80 pb-32">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-40">
-                <h1 class="text-7xl md:text-9xl font-extrabold text-black mb-8 uppercase tracking-tightest leading-[0.85]">Infrastructure <br> For Intelligence.</h1>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto font-medium">Cirya builds the backbone for high-value digital assets and decentralized audio networks.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white border p-12 hover:border-ciryablue transition">
-                    <h3 class="text-3xl font-extrabold uppercase tracking-tightest mb-4">99.9%</h3>
-                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest">Network Uptime</p>
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="flex-grow">
+        <!-- HOME PAGE -->
+        <main id="home" class="page-transition pt-80 pb-32">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-40">
+                    <h1 class="text-7xl md:text-9xl font-extrabold text-black mb-8 uppercase tracking-tightest leading-[0.85]">Infrastructure <br> For Intelligence.</h1>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto font-medium">Cirya builds the backbone for high-value digital assets and decentralized audio networks.</p>
                 </div>
-                <div class="bg-white border p-12 hover:border-ciryablue transition">
-                    <h3 class="text-3xl font-extrabold uppercase tracking-tightest mb-4">6 Nodes</h3>
-                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest">Global Distribution</p>
-                </div>
-                <div class="bg-white border p-12 hover:border-ciryablue transition">
-                    <h3 class="text-3xl font-extrabold uppercase tracking-tightest mb-4">Zero</h3>
-                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest">User Tracking</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- RADIO PAGE -->
-    <main id="radio-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-        <div class="bg-black text-white p-12 md:p-24 shadow-2xl mb-12">
-            <h2 class="text-8xl font-extrabold uppercase mb-8 tracking-tightest">Radio One</h2>
-            <div class="flex items-center space-x-12">
-                <button onclick="toggleAudio()" class="w-24 h-24 bg-white text-black flex items-center justify-center rounded-full hover:bg-ciryablue hover:text-white transition">
-                    <svg id="play-btn-icon" class="w-10 h-10 fill-current translate-x-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </button>
-                <div>
-                    <p class="text-gray-400 font-bold uppercase tracking-widest text-[10px] mb-2">Live Stream Active</p>
-                    <p class="text-white text-xl font-bold uppercase">Technical Feed: CMN-NODE-01</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-12 border">
-                <h4 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Radio Department</h4>
-                <div class="flex items-center space-x-6">
-                    <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-16 h-16 grayscale rounded-full">
-                    <div>
-                        <p class="font-extrabold uppercase text-lg">Hashtag</p>
-                        <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest">Head of Operations</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white border p-12 hover:border-ciryablue transition">
+                        <h3 class="text-3xl font-extrabold uppercase tracking-tightest mb-4">99.9%</h3>
+                        <p class="text-gray-400 text-xs font-bold uppercase tracking-widest">Network Uptime</p>
+                    </div>
+                    <div class="bg-white border p-12 hover:border-ciryablue transition">
+                        <h3 class="text-3xl font-extrabold uppercase tracking-tightest mb-4">6 Nodes</h3>
+                        <p class="text-gray-400 text-xs font-bold uppercase tracking-widest">Global Distribution</p>
+                    </div>
+                    <div class="bg-white border p-12 hover:border-ciryablue transition">
+                        <h3 class="text-3xl font-extrabold uppercase tracking-tightest mb-4">Zero</h3>
+                        <p class="text-gray-400 text-xs font-bold uppercase tracking-widest">User Tracking</p>
                     </div>
                 </div>
-                <a href="mailto:hashtag@cirya.co" class="mt-8 block text-[10px] font-extrabold uppercase tracking-widest border-b border-black w-max pb-1">Contact Lead</a>
             </div>
-            <div class="bg-white p-12 border">
-                <h4 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Technical Info</h4>
-                <p class="text-gray-500 font-medium leading-relaxed">Cirya Radio utilizes high-fidelity MP3 encoding for global transmission. Our stream includes automated metadata synchronization for title and artist tracking across all nodes.</p>
-            </div>
-        </div>
-    </main>
+        </main>
 
-    <!-- ECO PLAN PAGE -->
-    <main id="eco-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-        <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest leading-none">Sustainability <br>& Awareness.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="bg-white p-12 border border-gray-100">
-                <span class="text-[10px] font-extrabold text-red-600 uppercase tracking-widest mb-6 block">404 Awareness Initiative</span>
-                <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Lost Connections</h3>
-                <p class="text-gray-500 font-medium leading-relaxed">We utilize every technical error on our network to highlight missing children cases. If a page cannot be found, we ensure a child can be. Every 404 page across the Cirya ecosystem is hard-coded to display awareness cards from national databases.</p>
+        <!-- RADIO PAGE -->
+        <main id="radio-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
+            <div class="bg-black text-white p-12 md:p-24 shadow-2xl mb-12">
+                <h2 class="text-8xl font-extrabold uppercase mb-8 tracking-tightest">Radio One</h2>
+                <div class="flex items-center space-x-12">
+                    <button onclick="toggleAudio()" class="w-24 h-24 bg-white text-black flex items-center justify-center rounded-full hover:bg-ciryablue hover:text-white transition">
+                        <svg id="play-btn-icon" class="w-10 h-10 fill-current translate-x-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div>
+                        <p class="text-gray-400 font-bold uppercase tracking-widest text-[10px] mb-2">Live Stream Active</p>
+                        <p class="text-white text-xl font-bold uppercase">Technical Feed: CMN-NODE-01</p>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white p-12 border border-gray-100">
-                <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Node Efficiency</h3>
-                <p class="text-gray-500 font-medium leading-relaxed">Our infrastructure operates on decentralized nodes that prioritize renewable energy sources. We optimize code to reduce the thermal output of server clusters, ensuring minimal environmental impact per broadcast hour.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-12 border">
+                    <h4 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Radio Department</h4>
+                    <div class="flex items-center space-x-6">
+                        <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-16 h-16 grayscale rounded-full" alt="Hashtag">
+                        <div>
+                            <p class="font-extrabold uppercase text-lg">Hashtag</p>
+                            <p class="text-ciryablue font-bold text-[10px] uppercase tracking-widest">Head of Operations</p>
+                        </div>
+                    </div>
+                    <a href="mailto:hashtag@cirya.co" class="mt-8 block text-[10px] font-extrabold uppercase tracking-widest border-b border-black w-max pb-1">Contact Lead</a>
+                </div>
+                <div class="bg-white p-12 border">
+                    <h4 class="text-2xl font-extrabold uppercase mb-6 tracking-tightest">Technical Info</h4>
+                    <p class="text-gray-500 font-medium leading-relaxed">Cirya Radio utilizes high-fidelity MP3 encoding for global transmission. Our stream includes automated metadata synchronization for title and artist tracking across all nodes.</p>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <!-- REMAINING PAGES WITH TEXT CONTENT -->
-    <main id="about-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
-        <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">The Identity.</h2>
-        <p class="text-2xl text-gray-500 font-medium leading-relaxed max-w-4xl">Cirya Media Network is a private conglomerate specializing in digital infrastructure. We operate with zero-footprint protocols and prioritize privacy over data collection. Our network spans six global nodes, delivering capital and intelligence through advanced technical platforms.</p>
-    </main>
+        <!-- ECO PLAN PAGE -->
+        <main id="eco-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
+            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest leading-none">Sustainability <br>& Awareness.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white p-12 border border-gray-100">
+                    <span class="text-[10px] font-extrabold text-red-600 uppercase tracking-widest mb-6 block">404 Awareness Initiative</span>
+                    <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Lost Connections</h3>
+                    <p class="text-gray-500 font-medium leading-relaxed">We utilize every technical error on our network to highlight missing children cases. If a page cannot be found, we ensure a child can be. Every 404 page across the Cirya ecosystem is hard-coded to display awareness cards from national databases.</p>
+                </div>
+                <div class="bg-white p-12 border border-gray-100">
+                    <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Node Efficiency</h3>
+                    <p class="text-gray-500 font-medium leading-relaxed">Our infrastructure operates on decentralized nodes that prioritize renewable energy sources. We optimize code to reduce the thermal output of server clusters, ensuring minimal environmental impact per broadcast hour.</p>
+                </div>
+            </div>
+        </main>
 
-    <footer class="bg-black text-white pt-32 pb-16 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-[9px] font-extrabold uppercase tracking-widest text-gray-600">
-            <p>&copy; 2026 Cirya Media Network</p>
-            <div class="flex space-x-12">
-                <button onclick="showPage('ethics')" class="hover:text-white transition">Ethics</button>
-                <button onclick="showPage('legal')" class="hover:text-white transition">Legal</button>
+        <!-- ABOUT PAGE -->
+        <main id="about-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
+            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">The Identity.</h2>
+            <p class="text-2xl text-gray-500 font-medium leading-relaxed max-w-4xl">Cirya Media Network is a private conglomerate specializing in digital infrastructure. We operate with zero-footprint protocols and prioritize privacy over data collection. Our network spans six global nodes, delivering capital and intelligence through advanced technical platforms.</p>
+        </main>
+
+        <!-- OTHER SECTIONS (Leadership, Ethics, etc. placeholder logic) -->
+        <main id="ethics-page" class="hidden page-transition pt-64 pb-32 px-6 max-w-7xl mx-auto">
+            <h2 class="text-7xl font-extrabold mb-16 uppercase tracking-tightest">Ethics.</h2>
+            <p class="text-gray-500 font-medium leading-relaxed">Standardized protocol for digital neutrality.</p>
+        </main>
+    </div>
+
+    <!-- FOOTER WITH NETWORK CORE -->
+    <footer class="bg-black text-white pt-24 pb-16 mt-auto">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-12 md:space-y-0">
+                <div class="flex flex-col items-center md:items-start space-y-4">
+                    <img class="h-8 w-auto opacity-80" src="Group 373.svg" alt="Cirya Network Core">
+                    <span class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-gray-500">Network Core</span>
+                </div>
+                
+                <div class="flex space-x-12 text-[9px] font-extrabold uppercase tracking-widest text-gray-500">
+                    <button onclick="showPage('ethics')" class="hover:text-white transition">Ethics</button>
+                    <button onclick="showPage('legal')" class="hover:text-white transition">Legal</button>
+                    <button onclick="showPage('about')" class="hover:text-white transition">About</button>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-900 mt-16 pt-8 flex justify-between items-center text-[8px] font-extrabold uppercase tracking-widest text-gray-700">
+                <p>&copy; 2026 Cirya Media Network. All Rights Reserved.</p>
+                <p>Node Status: Operational</p>
             </div>
         </div>
     </footer>
