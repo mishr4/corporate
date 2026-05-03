@@ -12,7 +12,8 @@
             theme: {
                 extend: {
                     colors: { ciryablue: '#3b28cc' },
-                    letterSpacing: { tightest: '-.075em', widest: '.5em' }
+                    // Adjusted tracking to prevent squished letters
+                    letterSpacing: { tightest: '-.02em', widest: '.5em' }
                 }
             }
         }
@@ -90,13 +91,14 @@
                     <div class="logo-item" onclick="showPage('ethics')"><img class="h-10 w-auto" src="blackethics.svg" alt="Cirya Ethics"></div>
                 </div>
             </div>
-            <div class="hidden lg:flex space-x-8 items-center">
+            <div class="hidden lg:flex space-x-6 items-center">
                 <button onclick="showPage('about')" class="nav-btn">About</button>
                 <button onclick="showPage('radio')" class="nav-btn">Radio</button>
                 <button onclick="showPage('ethics')" class="nav-btn">Ethics</button>
                 <button onclick="showPage('investors')" class="nav-btn">Investors</button>
                 <button onclick="showPage('news')" class="nav-btn">Newsroom</button>
                 <button onclick="showPage('careers')" class="nav-btn">Careers</button>
+                <button onclick="showPage('eco')" class="nav-btn">Eco Plan</button>
             </div>
             <a href="mailto:contact@cirya.co" class="bg-black text-white px-6 py-3 font-extrabold text-[9px] tracking-widest rounded-sm hover:bg-ciryablue transition uppercase">Contact</a>
         </div>
@@ -110,24 +112,6 @@
                 <h1 class="text-6xl md:text-8xl font-extrabold text-black mb-8 uppercase tracking-tightest leading-[0.9]">Capital & Intelligence</h1>
                 <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto font-medium">High value digital infrastructure for the global intelligence network.</p>
             </div>
-
-            <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-40">
-                <div class="bg-white p-12 border border-gray-100 cursor-pointer" onclick="showPage('radio')">
-                    <div class="w-12 h-1 bg-ciryablue mb-10"></div>
-                    <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Radio Ops</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed">Secure MP3 broadcast infrastructure.</p>
-                </div>
-                <div class="bg-white p-12 border border-gray-100 cursor-pointer" onclick="showPage('ethics')">
-                    <div class="w-12 h-1 bg-black mb-10"></div>
-                    <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Ethics</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed">Our moral framework for decentralized media.</p>
-                </div>
-                <div class="bg-white p-12 border border-gray-100 cursor-pointer" onclick="showPage('investors')">
-                    <div class="w-12 h-1 bg-gray-300 mb-10"></div>
-                    <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Investors</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed">Strategic capital growth through digital holdings.</p>
-                </div>
-            </section>
         </main>
 
         <!-- ETHICS PAGE -->
@@ -137,17 +121,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
                     <div class="space-y-12">
                         <div>
-                            <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">01. Decentralization</h3>
-                            <p class="text-gray-500 font-medium leading-relaxed">We believe intelligence should not be siloed. Our network operates across multiple nodes to ensure continuous availability.</p>
+                            <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Decentralization</h3>
+                            <p class="text-gray-500 font-medium leading-relaxed">Intelligence should not be siloed. Our network operates across multiple nodes to ensure continuous availability.</p>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">02. Neutrality</h3>
+                            <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Neutrality</h3>
                             <p class="text-gray-500 font-medium leading-relaxed">Infrastructure must remain neutral. We provide the tools for broadcast without editorial interference.</p>
                         </div>
-                    </div>
-                    <div class="bg-black text-white p-12">
-                        <h3 class="text-3xl font-extrabold uppercase mb-6 tracking-tightest">Integrity First</h3>
-                        <p class="text-gray-400 font-medium leading-relaxed">Cirya Media Network adheres to a strict protocol of data privacy and user autonomy. We do not track. We do not sell.</p>
                     </div>
                 </div>
             </div>
@@ -160,34 +140,37 @@
                     <h2 class="text-7xl font-extrabold uppercase tracking-tightest">Radio Ops</h2>
                     <img class="h-16 w-auto" src="radio.svg" alt="Radio Logo">
                 </div>
-                <div class="bg-black text-white p-12 md:p-20 shadow-2xl relative overflow-hidden">
+                <div class="bg-black text-white p-12 md:p-20 shadow-2xl">
                     <h3 class="text-6xl md:text-7xl font-extrabold uppercase mb-6 tracking-tightest">Cirya Radio One</h3>
-                    <p class="text-gray-400 font-bold mb-16 uppercase tracking-widest text-xs md:text-sm">Feed: https://cast.cirya.co/listen/one/radio.mp3</p>
-                    <div class="flex items-center space-x-10">
-                        <button onclick="toggleAudio()" class="w-20 h-20 bg-white text-black flex items-center justify-center rounded-full hover:bg-ciryablue hover:text-white transition group">
-                            <svg id="play-btn-icon" class="w-8 h-8 fill-current translate-x-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </button>
-                    </div>
+                    <p class="text-gray-400 font-bold mb-16 uppercase tracking-widest text-xs">Feed: https://cast.cirya.co/listen/one/radio.mp3</p>
+                    <button onclick="toggleAudio()" class="w-20 h-20 bg-white text-black flex items-center justify-center rounded-full hover:bg-ciryablue hover:text-white transition group">
+                        <svg id="play-btn-icon" class="w-8 h-8 fill-current translate-x-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
                 </div>
             </div>
         </main>
 
-        <!-- LEADERSHIP PAGE -->
+        <!-- LEADERSHIP PAGE (RESTORING HASHTAG) -->
         <main id="leadership-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-7xl font-extrabold mb-24 uppercase tracking-tightest">Leadership</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="group">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="group text-center">
                         <img src="https://i.ibb.co/5b56PPg/Rectangle-59.png" class="w-full aspect-square object-cover mb-8 grayscale group-hover:grayscale-0 transition" alt="Alex Mishra">
                         <h3 class="text-2xl font-extrabold uppercase mb-2">Alex Mishra</h3>
                         <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">CEO</p>
                     </div>
-                    <div class="group">
+                    <div class="group text-center">
                         <img src="https://i.ibb.co/QvjvNSFB/Rectangle-61.png" class="w-full aspect-square object-cover mb-8 grayscale group-hover:grayscale-0 transition" alt="Cody Devbro">
                         <h3 class="text-2xl font-extrabold uppercase mb-2">Cody Devbro</h3>
                         <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">CTO</p>
                     </div>
-                    <div class="group">
+                    <div class="group text-center">
+                        <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-full aspect-square object-cover mb-8 grayscale group-hover:grayscale-0 transition" alt="Hashtag">
+                        <h3 class="text-2xl font-extrabold uppercase mb-2">Hashtag</h3>
+                        <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Head of Radio</p>
+                    </div>
+                    <div class="group text-center">
                         <img src="https://i.ibb.co/QF6W9sH1/Rectangle-60.png" class="w-full aspect-square object-cover mb-8 grayscale group-hover:grayscale-0 transition" alt="Seehed">
                         <h3 class="text-2xl font-extrabold uppercase mb-2">Seehed</h3>
                         <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Engineering</p>
@@ -196,7 +179,7 @@
             </div>
         </main>
 
-        <!-- OTHER PAGES (INVESTORS, NEWS, CAREERS, ABOUT) PLACEHOLDERS -->
+        <!-- REMAINING CORPORATE PAGES -->
         <main id="investors-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
             <div class="max-w-7xl mx-auto px-6"><h2 class="text-7xl font-extrabold uppercase tracking-tightest">Investors</h2></div>
         </main>
@@ -206,8 +189,14 @@
         <main id="careers-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
             <div class="max-w-7xl mx-auto px-6"><h2 class="text-7xl font-extrabold uppercase tracking-tightest">Careers</h2></div>
         </main>
+        <main id="eco-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
+            <div class="max-w-7xl mx-auto px-6"><h2 class="text-7xl font-extrabold uppercase tracking-tightest">Eco Plan</h2></div>
+        </main>
         <main id="about-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
             <div class="max-w-7xl mx-auto px-6"><h2 class="text-7xl font-extrabold uppercase tracking-tightest">About</h2></div>
+        </main>
+        <main id="legal-page" class="hidden page-transition opacity-0 translate-y-8 pt-64 pb-32">
+            <div class="max-w-7xl mx-auto px-6"><h2 class="text-7xl font-extrabold uppercase tracking-tightest">Legal</h2></div>
         </main>
     </div>
 
@@ -218,6 +207,7 @@
                 <div class="flex space-x-12">
                     <button onclick="showPage('ethics')" class="hover:text-white transition">Ethics</button>
                     <button onclick="showPage('leadership')" class="hover:text-white transition">Leadership</button>
+                    <button onclick="showPage('legal')" class="hover:text-white transition">Legal</button>
                 </div>
             </div>
         </div>
