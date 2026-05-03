@@ -27,101 +27,97 @@
             window.scrollTo(0, 0);
         }
     </script>
+    <style>
+        .floating-nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: 90%;
+            max-width: 1100px;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased selection:bg-ciryablue selection:text-white">
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
 
-    <!-- Navigation -->
-    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="showPage('home')">
-                    <img class="h-8 w-auto transition-transform group-hover:scale-105" src="Group 373.svg" alt="Cirya Logo">
-                </div>
-                <div class="hidden md:flex space-x-10 items-center text-[10px] uppercase tracking-[0.3em] font-bold">
-                    <button onclick="showPage('leadership-page')" class="text-gray-500 hover:text-ciryablue transition">Leadership</button>
-                    <button onclick="showPage('ethics-page')" class="text-gray-500 hover:text-ciryablue transition">Ethics</button>
-                    <a href="https://cirya.co/careers" class="text-gray-500 hover:text-ciryablue transition">Careers</a>
-                    <a href="https://cast.cirya.co" class="text-gray-400 hover:text-ciryablue transition border-l pl-10 border-gray-100">CiryaCast</a>
-                </div>
-                <div class="hidden md:flex items-center">
-                    <a href="mailto:contact@cirya.co" class="bg-ciryablue text-white px-7 py-2.5 rounded-full font-bold text-xs hover:bg-blue-800 transition shadow-lg shadow-blue-900/20">Contact</a>
-                </div>
+    <!-- Floating Square Navigation -->
+    <nav class="floating-nav">
+        <div class="bg-white border border-gray-200 shadow-2xl px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center cursor-pointer" onclick="showPage('home')">
+                <img class="h-8 w-auto" src="Group 373.svg" alt="Cirya Logo">
+            </div>
+            <div class="hidden md:flex space-x-10 items-center text-[11px] uppercase tracking-[0.3em] font-black">
+                <button onclick="showPage('leadership-page')" class="hover:text-ciryablue transition">Leadership</button>
+                <button onclick="showPage('ethics-page')" class="hover:text-ciryablue transition border-x px-10 border-gray-100">Ethics</button>
+                <a href="https://cirya.co/careers" class="hover:text-ciryablue transition">Careers</a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="https://cast.cirya.co" class="text-[10px] font-bold text-gray-400 hover:text-ciryablue hidden lg:block">CIRYACAST</a>
+                <a href="mailto:contact@cirya.co" class="bg-ciryablue text-white px-6 py-3 font-bold text-xs hover:bg-black transition">CONTACT</a>
             </div>
         </div>
     </nav>
 
     <!-- HOME PAGE -->
     <main id="home">
-        <header class="bg-gray-900 py-56 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-tr from-black to-gray-900/40"></div>
-            <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                <h1 class="text-7xl md:text-9xl font-black text-white mb-8 tracking-tighter italic opacity-90">CIRYA</h1>
-                <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-14 font-light leading-relaxed">Infrastructure for the next generation of global intelligence.</p>
-                <div class="flex justify-center">
-                    <a href="https://cirya.co" class="bg-white text-gray-900 px-14 py-5 rounded-full font-bold text-lg hover:bg-gray-200 transition shadow-2xl">Access News Portal</a>
-                </div>
+        <header class="bg-gray-900 pt-64 pb-48 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-gray-900"></div>
+            <div class="relative max-w-7xl mx-auto px-6 text-center">
+                <h1 class="text-7xl md:text-9xl font-black text-white mb-8 tracking-tighter italic">CIRYA</h1>
+                <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-14 font-light">Independent Journalism. Uncompromising Infrastructure.</p>
+                <a href="https://cirya.co" class="inline-block bg-white text-gray-900 px-14 py-5 font-bold text-lg hover:bg-ciryablue hover:text-white transition shadow-2xl">VISIT PORTAL</a>
             </div>
         </header>
 
-        <!-- Dynamic Grid Section -->
+        <!-- restored Card Section -->
         <section class="py-32 bg-gray-50">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <!-- Careers -->
-                    <div class="bg-white p-14 rounded-[2.5rem] shadow-sm border border-gray-100 flex flex-col justify-between hover:border-ciryablue/20 transition-all duration-500 group">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Careers Card -->
+                    <div class="bg-white p-14 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all">
                         <div>
-                            <h2 class="text-4xl font-bold mb-6 text-gray-900 tracking-tight">Careers</h2>
-                            <p class="text-gray-500 mb-10 text-lg leading-relaxed">We are looking for product engineers and investigative journalists to join our San Francisco headquarters.</p>
+                            <h2 class="text-4xl font-bold mb-6 text-gray-900 italic">Careers</h2>
+                            <p class="text-gray-500 mb-10 text-lg leading-relaxed">Join our engineering and newsroom teams in San Francisco.</p>
                         </div>
-                        <a href="https://cirya.co/careers" class="inline-flex items-center font-bold text-ciryablue tracking-widest text-xs uppercase group">
-                            Open Positions <span class="ml-3 group-hover:translate-x-2 transition-transform">&rarr;</span>
-                        </a>
+                        <a href="https://cirya.co/careers" class="inline-block bg-gray-900 text-white px-8 py-4 font-bold text-sm hover:bg-ciryablue transition self-start">VIEW OPENINGS</a>
                     </div>
-                    <!-- Ethics -->
-                    <div class="bg-ciryablue p-14 rounded-[2.5rem] shadow-2xl text-white flex flex-col justify-between relative overflow-hidden">
-                        <div class="relative z-10">
-                            <div class="mb-10 w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-xl border border-white/20">
-                                <img class="h-7 w-auto object-contain" src="ethics.svg" alt="Ethics">
-                            </div>
-                            <h2 class="text-4xl font-bold mb-6 tracking-tight">Ethics</h2>
-                            <p class="text-blue-100 mb-10 text-lg leading-relaxed">Our editorial independence is the foundation of our network infrastructure.</p>
+                    <!-- Ethics Card (Original Style Restored) -->
+                    <div class="bg-ciryablue p-14 shadow-2xl text-white flex flex-col justify-center items-start relative overflow-hidden group">
+                        <div class="mb-8 p-3 bg-white/10 border border-white/20">
+                            <img class="h-10 w-auto" src="ethics.svg" alt="Ethics Logo">
                         </div>
-                        <button onclick="showPage('ethics-page')" class="bg-white text-ciryablue px-10 py-4 rounded-2xl font-bold hover:bg-gray-100 transition self-start relative z-10 shadow-xl">Review Guidelines</button>
+                        <h2 class="text-4xl font-bold mb-6 italic">Ethics</h2>
+                        <p class="text-blue-100 mb-10 text-lg leading-relaxed">Review our editorial standards and corporate responsibility reports.</p>
+                        <button onclick="showPage('ethics-page')" class="bg-white text-ciryablue px-8 py-4 font-bold text-sm hover:bg-gray-100 transition">READ GUIDELINES</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Social & Ops Section -->
-        <section class="py-32 bg-white">
+        <!-- Social Feed -->
+        <section class="py-32 bg-white border-t border-gray-100">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="flex items-center space-x-4 mb-16">
-                    <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                    <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400">Live Network Data</h2>
+                    <div class="w-3 h-3 bg-red-500 animate-pulse"></div>
+                    <h2 class="text-xs font-black uppercase tracking-[0.4em] text-gray-400">Network Intelligence</h2>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                    <div class="lg:col-span-2 h-[600px] rounded-[2.5rem] border border-gray-100 bg-gray-50/50 p-6 shadow-inner overflow-hidden">
-                        <div class="h-full overflow-y-auto pr-2 custom-scrollbar">
-                            <a class="twitter-timeline" data-chrome="noheader nofooter noborders transparent" data-height="540" href="https://twitter.com/ciryanews"></a>
-                        </div>
+                    <div class="lg:col-span-2 h-[500px] border border-gray-100 bg-gray-50 p-6 overflow-y-auto">
+                        <a class="twitter-timeline" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/ciryanews"></a>
                     </div>
-                    <div class="bg-gray-900 p-14 rounded-[2.5rem] text-white flex flex-col justify-center border border-gray-800 shadow-2xl relative overflow-hidden">
-                        <h3 class="text-3xl font-bold mb-8 tracking-tight relative z-10">Network Ops</h3>
-                        <div class="space-y-10 relative z-10">
-                            <div class="group">
-                                <p class="text-[9px] uppercase tracking-[0.3em] text-gray-500 font-bold mb-3">Service Availability</p>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-sm font-mono text-gray-300">Public Portal</span>
-                                    <span class="text-green-400 text-[10px] font-black uppercase">Online</span>
-                                </div>
+                    <div class="bg-gray-900 p-14 text-white flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-6 italic">Network Status</h3>
+                        <p class="text-gray-400 mb-10 text-sm leading-relaxed">Resilient global infrastructure ensuring zero-latency intelligence delivery.</p>
+                        <div class="space-y-6">
+                            <div class="flex justify-between border-b border-gray-800 pb-4 text-[10px] font-bold uppercase tracking-widest">
+                                <span class="text-gray-500">System</span>
+                                <span class="text-green-400">Operational</span>
                             </div>
-                            <div class="group">
-                                <p class="text-[9px] uppercase tracking-[0.3em] text-gray-500 font-bold mb-3">Internal API</p>
-                                <a href="https://cast.cirya.co" class="text-sm font-mono text-ciryablue hover:text-white transition">cast.cirya.co</a>
+                            <div class="flex justify-between border-b border-gray-800 pb-4 text-[10px] font-bold uppercase tracking-widest">
+                                <span class="text-gray-500">Access</span>
+                                <a href="https://cast.cirya.co" class="text-ciryablue hover:text-white">cast.cirya.co</a>
                             </div>
-                        </div>
-                        <div class="absolute bottom-0 right-0 p-8 opacity-10">
-                            <img class="h-24 w-auto brightness-0 invert" src="Group 373.svg" alt="Cirya">
                         </div>
                     </div>
                 </div>
@@ -130,88 +126,78 @@
     </main>
 
     <!-- LEADERSHIP PAGE -->
-    <main id="leadership-page" class="hidden">
-        <section class="py-40 bg-white min-h-screen">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <h2 class="text-6xl font-black mb-6 tracking-tighter">Executive</h2>
-                <p class="text-xl text-gray-500 mb-24 max-w-xl">Strategy and development led by a commitment to technical excellence.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                    <div class="group">
-                        <div class="w-full aspect-[4/5] bg-gray-100 rounded-[2rem] mb-10 transition-transform group-hover:scale-[1.02] duration-500"></div>
-                        <h3 class="text-3xl font-bold text-gray-900">Alexander Neil Mishra</h3>
-                        <p class="text-ciryablue font-bold text-[10px] uppercase tracking-[0.3em] mt-3">Product Engineer</p>
-                    </div>
-                    <div class="group">
-                        <div class="w-full aspect-[4/5] bg-gray-100 rounded-[2rem] mb-10 transition-transform group-hover:scale-[1.02] duration-500"></div>
-                        <h3 class="text-3xl font-bold text-gray-900">Sofia Sagala</h3>
-                        <p class="text-ciryablue font-bold text-[10px] uppercase tracking-[0.3em] mt-3">Personnel Manager</p>
-                    </div>
+    <main id="leadership-page" class="hidden pt-48 pb-32">
+        <section class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-6xl font-black mb-20 italic">Executive</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                <div>
+                    <div class="aspect-square bg-gray-100 mb-8 border border-gray-200"></div>
+                    <h3 class="text-2xl font-bold">Alexander Neil Mishra</h3>
+                    <p class="text-ciryablue font-bold text-xs uppercase tracking-widest mt-2">Product Engineer</p>
                 </div>
-                <button onclick="showPage('home')" class="mt-32 text-gray-400 font-bold text-xs uppercase tracking-[0.3em] hover:text-ciryablue transition">&larr; Back</button>
+                <div>
+                    <div class="aspect-square bg-gray-100 mb-8 border border-gray-200"></div>
+                    <h3 class="text-2xl font-bold">Sofia Sagala</h3>
+                    <p class="text-ciryablue font-bold text-xs uppercase tracking-widest mt-2">Personnel Manager</p>
+                </div>
             </div>
+            <button onclick="showPage('home')" class="mt-32 text-gray-400 font-bold text-xs tracking-widest hover:text-ciryablue transition uppercase">&larr; Return</button>
         </section>
     </main>
 
-    <!-- ETHICS PAGE -->
-    <main id="ethics-page" class="hidden">
-        <section class="py-40 bg-white min-h-screen">
-            <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <h2 class="text-6xl font-black mb-16 tracking-tighter">Integrity</h2>
-                <div class="space-y-20">
-                    <div class="grid md:grid-cols-3 gap-10 border-t border-gray-100 pt-16">
-                        <div class="text-[10px] font-bold uppercase tracking-[0.3em] text-ciryablue">Independence</div>
-                        <div class="md:col-span-2 text-2xl text-gray-600 font-light leading-relaxed">Cirya Media Network operates without external influence, ensuring that our reporting and technical growth serve the public interest.</div>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-10 border-t border-gray-100 pt-16">
-                        <div class="text-[10px] font-bold uppercase tracking-[0.3em] text-ciryablue">Data Usage</div>
-                        <div class="md:col-span-2 text-2xl text-gray-600 font-light leading-relaxed">We prioritize secure, transparent data management within all our media platforms, from CiryaCast to our public portals.</div>
-                    </div>
+    <!-- ETHICS PAGE (RESTORED BANNER) -->
+    <main id="ethics-page" class="hidden pt-48 pb-32">
+        <section class="max-w-4xl mx-auto px-6">
+            <!-- Restored High-Impact Banner -->
+            <div class="bg-ciryablue p-16 mb-20 flex items-center justify-between shadow-2xl border-t-8 border-green-400">
+                <div>
+                    <h2 class="text-5xl font-black text-white mb-2 italic">Editorial Ethics</h2>
+                    <p class="text-blue-100 text-lg font-medium">Sustainability & Integrity</p>
                 </div>
-                <button onclick="showPage('home')" class="mt-32 text-gray-400 font-bold text-xs uppercase tracking-[0.3em] hover:text-ciryablue transition">&larr; Back</button>
+                <img class="h-20 w-auto object-contain" src="ethics.svg" alt="Cirya Ethics Logo">
             </div>
+            <div class="space-y-16 text-gray-600 leading-relaxed text-xl">
+                <div class="border-l-4 border-ciryablue pl-10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Independence</h3>
+                    <p>Truth is our priority. We maintain strict independence from corporate and political pressures.</p>
+                </div>
+                <div class="border-l-4 border-ciryablue pl-10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Sourcing</h3>
+                    <p>We believe in radical transparency. We provide raw data and primary documents to support our reporting.</p>
+                </div>
+            </div>
+            <button onclick="showPage('home')" class="mt-32 text-gray-400 font-bold text-xs tracking-widest hover:text-ciryablue transition uppercase">&larr; Return</button>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-500 py-40">
+    <footer class="bg-gray-900 text-gray-500 py-40 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-20 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-20">
                 <div class="md:col-span-2">
-                    <img class="h-7 w-auto mb-10 brightness-0 invert" src="Group 373.svg" alt="Cirya Logo">
-                    <p class="text-xl max-w-sm leading-relaxed text-gray-400 font-light italic">"Uncompromising journalism via resilient infrastructure."</p>
+                    <!-- Pure White Logo -->
+                    <img class="h-8 w-auto mb-10 brightness-0 invert" src="Group 373.svg" alt="Cirya Logo">
+                    <p class="text-lg max-w-sm font-light italic">"Uncompromising journalism via resilient infrastructure."</p>
                 </div>
-                <div>
-                    <h4 class="text-white font-bold mb-10 uppercase text-[10px] tracking-[0.4em]">Corporate</h4>
-                    <ul class="space-y-6 text-sm">
-                        <li><button onclick="showPage('leadership-page')" class="hover:text-white transition">Leadership</button></li>
-                        <li><button onclick="showPage('ethics-page')" class="hover:text-white transition">Ethics</button></li>
-                        <li><a href="https://cirya.co/careers" class="hover:text-white transition">Careers</a></li>
-                    </ul>
+                <div class="text-sm space-y-4">
+                    <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-8">Headquarters</h4>
+                    <p>584 Castro St<br>Suite #4066<br>San Francisco, CA 94114</p>
                 </div>
-                <div>
-                    <h4 class="text-white font-bold mb-10 uppercase text-[10px] tracking-[0.4em]">Address</h4>
-                    <p class="text-sm leading-loose font-medium">
-                        584 Castro St<br>
-                        Suite #4066<br>
-                        San Francisco, CA 94114
-                    </p>
+                <div class="text-sm space-y-4">
+                    <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-8">Navigation</h4>
+                    <button onclick="showPage('leadership-page')" class="block hover:text-white">Leadership</button>
+                    <button onclick="showPage('ethics-page')" class="block hover:text-white">Ethics</button>
+                    <a href="https://cirya.co/careers" class="block hover:text-white">Careers</a>
                 </div>
             </div>
-            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.3em] font-black">
+            <div class="pt-20 mt-20 border-t border-gray-800 text-[10px] font-bold uppercase tracking-[0.4em] flex justify-between">
                 <p>&copy; 2026 Cirya Media Network</p>
-                <div class="flex space-x-10 mt-6 md:mt-0">
-                    <a href="https://x.com/ciryanews" class="hover:text-white transition">Twitter</a>
-                    <a href="mailto:contact@cirya.co" class="hover:text-white transition">Contact</a>
+                <div class="flex space-x-10">
+                    <a href="https://x.com/ciryanews" class="hover:text-white transition">X / Twitter</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <style>
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
-    </style>
 
 </body>
 </html>
