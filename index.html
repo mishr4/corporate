@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIRYA | Infrastructure for Intelligence</title>
+    <title>CIRYA CORPORATE | Infrastructure for Intelligence</title>
     
     <link rel="icon" type="image/png" href="Frame 27 (8).png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,40 +13,76 @@
                 extend: {
                     colors: { 
                         ciryablue: '#3b28cc',
-                        corpgray: '#f4f4f4'
+                        offblack: '#0a0a0a'
                     },
-                    letterSpacing: { tightest: '-.04em', widest: '.5em' }
+                    letterSpacing: { tightest: '-.06em', widest: '.5em' }
                 }
             }
         }
 
+        // --- CORE FUNCTIONALITY ---
         let isPlaying = false;
         const audio = new Audio('https://cast.cirya.co/listen/one/radio.mp3');
 
         function toggleAudio() {
             const btn = document.getElementById('play-btn-icon');
+            const status = document.getElementById('stream-status');
             if (isPlaying) {
                 audio.pause();
                 btn.innerHTML = '<path d="M8 5v14l11-7z"/>';
+                status.innerText = "STREAM PAUSED";
             } else {
                 audio.play();
                 btn.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+                status.innerText = "LIVE BROADCAST";
             }
             isPlaying = !isPlaying;
         }
 
+        // --- SEARCH ENGINE ---
+        function performSearch(e) {
+            e.preventDefault();
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const resultsDiv = document.getElementById('search-results');
+            resultsDiv.innerHTML = "";
+            
+            const database = [
+                { title: "Alex Mishra", type: "Leadership", link: "leadership" },
+                { title: "Radio One Stream", type: "Media", link: "radio" },
+                { title: "Eco-Plan 2026", type: "Ethics", link: "ethics" },
+                { title: "Product Engineering", type: "Careers", link: "careers" },
+                { title: "Cody Devbro", type: "Leadership", link: "leadership" },
+                { title: "Global Nodes", type: "Infrastructure", link: "home" }
+            ];
+
+            const filtered = database.filter(item => item.title.toLowerCase().includes(query));
+            
+            if (filtered.length > 0) {
+                filtered.forEach(item => {
+                    resultsDiv.innerHTML += `
+                        <div onclick="showPage('${item.link}')" class="p-4 border-b border-black/5 hover:bg-gray-50 cursor-pointer flex justify-between">
+                            <span class="font-bold uppercase text-xs">${item.title}</span>
+                            <span class="text-[9px] text-gray-400 uppercase tracking-widest">${item.type}</span>
+                        </div>`;
+                });
+            } else {
+                resultsDiv.innerHTML = "<p class='p-4 text-xs text-gray-400'>NO DATA MATCHES QUERY</p>";
+            }
+        }
+
+        // --- NAVIGATION SYSTEM ---
         function navigate() {
             const hash = window.location.hash.replace('#', '') || 'home';
-            const pages = ['home', 'ethics', 'leadership', 'radio', 'investors', 'about'];
+            const pages = ['home', 'ethics', 'leadership', 'radio', 'careers', 'news'];
             
             pages.forEach(id => {
-                const element = document.getElementById(id + '-page') || document.getElementById(id);
+                const element = document.getElementById(id + '-page');
                 if (element) {
                     element.classList.add('hidden', 'opacity-0');
                 }
             });
 
-            const activePage = document.getElementById(hash + '-page') || document.getElementById(hash);
+            const activePage = document.getElementById(hash + '-page');
             if (activePage) {
                 activePage.classList.remove('hidden');
                 setTimeout(() => activePage.classList.remove('opacity-0'), 50);
@@ -60,161 +96,220 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
         .page-transition { transition: opacity 0.4s ease-in-out; }
         .ticker-animation { animation: ticker 40s linear infinite; }
         @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .grid-bg { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 40px 40px; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body class="bg-white text-black antialiased min-h-screen flex flex-col grid-bg">
+<body class="bg-white text-black antialiased min-h-screen flex flex-col">
 
-    <!-- GLOBAL TELEMETRY BAR -->
-    <div class="fixed top-0 left-0 w-full bg-black text-[9px] font-bold uppercase tracking-[0.3em] py-2 text-white z-[110] border-b border-white/10">
+    <!-- TOP TELEMETRY -->
+    <div class="fixed top-0 left-0 w-full bg-black text-[9px] font-bold uppercase tracking-[0.3em] py-2 text-white z-[200]">
         <div class="overflow-hidden whitespace-nowrap">
             <div class="ticker-animation inline-block">
-                SYSTEM STATUS: OPERATIONAL • NODE-01: ACTIVE • NODE-07: SYNCING • MARKET CAP: $2.4B • CIRYA +4.2% • BTC $94,203 • SYSTEM STATUS: OPERATIONAL • NODE-01: ACTIVE • NODE-07: SYNCING • MARKET CAP: $2.4B • CIRYA +4.2% • BTC $94,203
+                CIRYA (CMN) +4.2% • NODE-01: ACTIVE • NODE-07: ONLINE • STAFF AUTH: VERIFIED • BTC $94,203 • RADIO ONE: LIVE • CIRYA (CMN) +4.2% • NODE-01: ACTIVE • NODE-07: ONLINE • STAFF AUTH: VERIFIED • BTC $94,203
             </div>
         </div>
     </div>
 
-    <!-- MINIMALIST NAVIGATION -->
-    <nav class="fixed top-12 left-0 w-full z-[100] px-8">
-        <div class="max-w-screen-2xl mx-auto flex justify-between items-end border-b border-black pb-4 bg-white/50 backdrop-blur-md">
-            <div>
-                <img class="h-5 w-auto cursor-pointer" src="Group 373.svg" alt="Cirya" onclick="showPage('home')">
-                <p class="text-[8px] font-black uppercase tracking-widest mt-2 text-gray-400">Media Network & Infrastructure</p>
+    <!-- MAIN INTERFACE HEADER -->
+    <nav class="fixed top-8 left-0 w-full z-[150] px-6">
+        <div class="max-w-screen-2xl mx-auto flex justify-between items-center py-6 border-b border-black bg-white/80 backdrop-blur-md">
+            <div class="flex items-center gap-12">
+                <img class="h-6 w-auto cursor-pointer" src="Group 373.svg" alt="Cirya" onclick="showPage('home')">
+                <div class="hidden xl:flex space-x-8">
+                    <button onclick="showPage('radio')" class="text-[10px] font-black uppercase tracking-tighter hover:text-ciryablue">Broadcasting</button>
+                    <button onclick="showPage('leadership')" class="text-[10px] font-black uppercase tracking-tighter hover:text-ciryablue">Personnel</button>
+                    <button onclick="showPage('ethics')" class="text-[10px] font-black uppercase tracking-tighter hover:text-ciryablue">Ethics</button>
+                    <button onclick="showPage('news')" class="text-[10px] font-black uppercase tracking-tighter hover:text-ciryablue">Intel</button>
+                    <a href="https://cirya.co/careers" class="text-[10px] font-black uppercase tracking-tighter text-ciryablue">Careers</a>
+                </div>
             </div>
-            <div class="flex space-x-8 items-center pb-1">
-                <button onclick="showPage('radio')" class="text-[10px] font-bold uppercase tracking-tighter hover:text-ciryablue transition">Live Stream</button>
-                <button onclick="showPage('leadership')" class="text-[10px] font-bold uppercase tracking-tighter hover:text-ciryablue transition">Leadership</button>
-                <button onclick="showPage('investors')" class="text-[10px] font-bold uppercase tracking-tighter hover:text-ciryablue transition">Investors</button>
-                <a href="mailto:contact@cirya.co" class="bg-black text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-ciryablue transition">Terminal</a>
-            </div>
+            
+            <!-- SEARCH BAR -->
+            <form onsubmit="performSearch(event)" class="relative">
+                <input id="search-input" type="text" placeholder="QUERY NETWORK..." class="bg-gray-100 px-4 py-2 text-[10px] font-bold border border-transparent focus:border-black outline-none w-48 transition-all focus:w-64">
+                <div id="search-results" class="absolute top-full right-0 w-64 bg-white border border-black mt-1 z-[200] max-h-48 overflow-y-auto no-scrollbar"></div>
+            </form>
         </div>
     </nav>
 
-    <div class="flex-grow pt-48 pb-24">
-        <!-- HOME: THE ARCHITECTURAL VIEW -->
-        <main id="home" class="page-transition px-8">
-            <div class="max-w-screen-2xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 border-b border-black pb-24 mb-24">
-                    <div class="lg:col-span-8">
-                        <h1 class="text-7xl md:text-[10rem] font-extrabold leading-[0.8] tracking-tightest uppercase mb-12">Global <br> Protocols.</h1>
-                        <p class="text-xl text-gray-500 max-w-xl font-medium leading-relaxed">Cirya Media Network designs and deploys high-availability infrastructure for decentralized digital assets and broadcast audio.</p>
-                    </div>
-                    <div class="lg:col-span-4 flex flex-col justify-end">
-                        <div class="border-t-4 border-black pt-6">
-                            <p class="text-[10px] font-black uppercase tracking-widest text-ciryablue mb-4">Core Competencies</p>
-                            <ul class="text-sm font-bold space-y-2 uppercase">
-                                <li>01. Node Distribution</li>
-                                <li>02. High-Fidelity Audio</li>
-                                <li>03. Zero-Footprint Security</li>
-                                <li>04. Data Sovereignty</li>
-                            </ul>
+    <div class="flex-grow pt-48">
+        
+        <!-- HOME: INFRASTRUCTURE (PAGE 1) -->
+        <main id="home-page" class="page-transition px-6 max-w-screen-2xl mx-auto">
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 border-b border-black pb-24">
+                <div class="lg:col-span-9">
+                    <h1 class="text-7xl md:text-[11rem] font-extrabold leading-[0.8] tracking-tightest uppercase mb-16">Intelligence <br> Backbone.</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div>
+                            <span class="text-ciryablue text-xs font-black uppercase tracking-widest">01 / Global Nodes</span>
+                            <p class="mt-4 text-sm font-bold leading-relaxed uppercase">Direct deployment of 7 proprietary server clusters across 4 continents.</p>
+                        </div>
+                        <div>
+                            <span class="text-ciryablue text-xs font-black uppercase tracking-widest">02 / Radio One</span>
+                            <p class="mt-4 text-sm font-bold leading-relaxed uppercase">High-fidelity 320kbps audio distribution with automated API metadata.</p>
+                        </div>
+                        <div>
+                            <span class="text-ciryablue text-xs font-black uppercase tracking-widest">03 / Privacy</span>
+                            <p class="mt-4 text-sm font-bold leading-relaxed uppercase">Zero-retention protocols. We do not store, track, or sell user data.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- METRICS GRID -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-black border border-black mb-24">
-                    <div class="bg-white p-12">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Network Uptime</p>
-                        <h3 class="text-4xl font-extrabold tracking-tightest">99.998%</h3>
-                    </div>
-                    <div class="bg-white p-12">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Global Nodes</p>
-                        <h3 class="text-4xl font-extrabold tracking-tightest">07 Units</h3>
-                    </div>
-                    <div class="bg-white p-12">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Encrypted Traffic</p>
-                        <h3 class="text-4xl font-extrabold tracking-tightest">100%</h3>
-                    </div>
-                    <div class="bg-white p-12">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Market Reach</p>
-                        <h3 class="text-4xl font-extrabold tracking-tightest">Tier 1</h3>
+                <div class="lg:col-span-3 flex flex-col justify-end gap-12">
+                    <div class="bg-black text-white p-8">
+                        <h4 class="text-[10px] font-black uppercase tracking-widest mb-4">Node Health</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between border-b border-white/10 pb-1"><span class="text-[9px]">NA-WEST</span><span class="text-[9px] text-green-500">ACTIVE</span></div>
+                            <div class="flex justify-between border-b border-white/10 pb-1"><span class="text-[9px]">EU-CENTRAL</span><span class="text-[9px] text-green-500">ACTIVE</span></div>
+                            <div class="flex justify-between border-b border-white/10 pb-1"><span class="text-[9px]">ASIA-SE</span><span class="text-[9px] text-yellow-500">SYNCING</span></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
 
-        <!-- RADIO: THE BROADCAST TERMINAL -->
-        <main id="radio-page" class="hidden page-transition px-8 max-w-screen-2xl mx-auto">
-            <div class="bg-black text-white p-12 md:p-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-ciryablue font-black text-[10px] uppercase tracking-[0.4em] mb-6">Broadcast Division</p>
-                    <h2 class="text-8xl font-extrabold uppercase mb-8 tracking-tightest">Radio One</h2>
-                    <button onclick="toggleAudio()" class="flex items-center space-x-6 group">
-                        <div class="w-20 h-20 bg-white text-black flex items-center justify-center rounded-full group-hover:bg-ciryablue group-hover:text-white transition">
-                            <svg id="play-btn-icon" class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- RADIO: BROADCAST (PAGE 2) -->
+        <main id="radio-page" class="hidden page-transition px-6 max-w-screen-2xl mx-auto pb-32">
+            <div class="bg-black text-white p-12 md:p-32 flex flex-col md:flex-row justify-between items-center gap-12">
+                <div class="max-w-2xl">
+                    <p id="stream-status" class="text-ciryablue font-black text-[11px] uppercase tracking-[0.5em] mb-8">STREAM STANDBY</p>
+                    <h2 class="text-8xl md:text-[10rem] font-extrabold uppercase tracking-tightest leading-none mb-12">Radio One</h2>
+                    <div class="flex items-center gap-8">
+                        <button onclick="toggleAudio()" class="w-24 h-24 bg-white text-black rounded-full flex items-center justify-center hover:bg-ciryablue hover:text-white transition group">
+                            <svg id="play-btn-icon" class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div>
+                            <p class="text-sm font-black uppercase">Technical Feed</p>
+                            <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Global Relay Node 01-CA</p>
                         </div>
-                        <span class="text-[10px] font-black uppercase tracking-widest group-hover:text-ciryablue transition">Initialize Stream</span>
-                    </button>
+                    </div>
                 </div>
-                <div class="border-l border-white/20 pl-12">
-                    <p class="text-[10px] font-bold text-gray-500 uppercase mb-4 tracking-widest">Metadata Terminal</p>
-                    <div class="space-y-4">
-                        <div class="flex justify-between border-b border-white/10 pb-2">
-                            <span class="text-[10px] text-gray-400 uppercase">Encoding</span>
-                            <span class="text-[10px] font-bold uppercase text-green-500">320kbps MP3</span>
-                        </div>
-                        <div class="flex justify-between border-b border-white/10 pb-2">
-                            <span class="text-[10px] text-gray-400 uppercase">Primary Node</span>
-                            <span class="text-[10px] font-bold uppercase">CMN-NODE-01</span>
+                <div class="w-full md:w-80 space-y-8">
+                    <div class="border-t border-white/20 pt-4">
+                        <h5 class="text-[10px] font-black uppercase mb-4">Current Department</h5>
+                        <div class="flex items-center gap-4">
+                            <img src="https://i.ibb.co/Kz7NfGzz/Rectangle-62-1.png" class="w-12 h-12 grayscale rounded-sm" alt="Hashtag">
+                            <div><p class="text-xs font-bold uppercase">Hashtag Cyberistic</p><p class="text-[9px] text-gray-500 uppercase">COO | Radio Head</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- LEADERSHIP: THE PERSONNEL FILE -->
-        <main id="leadership-page" class="hidden page-transition px-8 max-w-screen-2xl mx-auto">
-            <h2 class="text-5xl font-extrabold mb-12 uppercase tracking-tightest border-b-4 border-black pb-4 inline-block">Personnel.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="border-t border-black pt-8">
-                    <p class="text-[9px] font-black text-ciryablue uppercase tracking-widest mb-2">ID: AM-001</p>
-                    <h3 class="text-2xl font-black uppercase mb-4">Alex Mishra</h3>
-                    <p class="text-[10px] font-bold uppercase text-gray-400 mb-6">Product Engineer</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">Directs platform development and the technical architecture of the Cirya ecosystem.</p>
+        <!-- LEADERSHIP: STAFF DIRECTORY (PAGE 3) -->
+        <main id="leadership-page" class="hidden page-transition px-6 max-w-screen-2xl mx-auto pb-32">
+            <div class="border-b border-black pb-12 mb-24">
+                <h2 class="text-8xl font-extrabold uppercase tracking-tightest">Leadership.</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <!-- Alex Mishra -->
+                <div class="border-t border-black pt-8 group">
+                    <p class="text-[9px] font-black text-ciryablue mb-4 uppercase tracking-widest italic">ID: AM-CEO</p>
+                    <h3 class="text-3xl font-black uppercase mb-4 group-hover:text-ciryablue transition">Alex Mishra</h3>
+                    <p class="text-[10px] font-bold uppercase text-gray-400 mb-6">Chief Executive Officer</p>
+                    <p class="text-sm font-medium leading-relaxed text-gray-600">Provides primary vision and executive leadership, overseeing high-level strategy and administrative operations.</p>
                 </div>
-                <div class="border-t border-black pt-8">
-                    <p class="text-[9px] font-black text-ciryablue uppercase tracking-widest mb-2">ID: SS-002</p>
-                    <h3 class="text-2xl font-black uppercase mb-4">Sofia Sagala</h3>
-                    <p class="text-[10px] font-bold uppercase text-gray-400 mb-6">Personnel Manager</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">Oversees cross-departmental operations and leadership alignment.</p>
+
+                <!-- Cody Devbro -->
+                <div class="border-t border-black pt-8 group">
+                    <p class="text-[9px] font-black text-ciryablue mb-4 uppercase tracking-widest italic">ID: CD-CTO</p>
+                    <h3 class="text-3xl font-black uppercase mb-4 group-hover:text-ciryablue transition">Cody Devbro</h3>
+                    <p class="text-[10px] font-bold uppercase text-gray-400 mb-6">Chief Technology Officer</p>
+                    <p class="text-sm font-medium leading-relaxed text-gray-600">Leads the technical direction, managing the development stack and ensuring stability and innovation of digital infrastructure.</p>
+                </div>
+
+                <!-- Hashtag Cyberistic -->
+                <div class="border-t border-black pt-8 group">
+                    <p class="text-[9px] font-black text-ciryablue mb-4 uppercase tracking-widest italic">ID: HC-COO</p>
+                    <h3 class="text-3xl font-black uppercase mb-4 group-hover:text-ciryablue transition">Hashtag Cyberistic</h3>
+                    <p class="text-[10px] font-bold uppercase text-gray-400 mb-6">Chief Operating Officer</p>
+                    <p class="text-sm font-medium leading-relaxed text-gray-600">Combines operational management with a focus on broadcasting and radio divisions to align with long-term goals.</p>
+                </div>
+
+                <!-- Seehed Shaffer -->
+                <div class="border-t border-black pt-8 group">
+                    <p class="text-[9px] font-black text-ciryablue mb-4 uppercase tracking-widest italic">ID: SS-CVO</p>
+                    <h3 class="text-3xl font-black uppercase mb-4 group-hover:text-ciryablue transition">Seehed Shaffer</h3>
+                    <p class="text-[10px] font-bold uppercase text-gray-400 mb-6">Chief Visionary Officer</p>
+                    <p class="text-sm font-medium leading-relaxed text-gray-600">Focuses on creative aspects while contributing to the core development and technical build of projects.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- INTEL: NEWS FEED (PAGE 4) -->
+        <main id="news-page" class="hidden page-transition px-6 max-w-screen-2xl mx-auto pb-32">
+            <h2 class="text-8xl font-extrabold uppercase tracking-tightest mb-24">Intel.</h2>
+            <div class="space-y-12">
+                <div class="border-l-8 border-black pl-12 py-4">
+                    <p class="text-[9px] font-black uppercase text-gray-400 mb-2">Technical Bulletin • May 2026</p>
+                    <h4 class="text-4xl font-black uppercase mb-4">Sub-Pacific Node-07 Finalized</h4>
+                    <p class="max-w-2xl text-sm font-bold uppercase leading-relaxed">Network reach expanded to Southeast Asian corridors. Latency for Radio One streams reduced by 42% in target zones.</p>
+                </div>
+                <div class="border-l-8 border-ciryablue pl-12 py-4">
+                    <p class="text-[9px] font-black uppercase text-gray-400 mb-2">Corporate News • April 2026</p>
+                    <h4 class="text-4xl font-black uppercase mb-4">Ethics Charter 2.0 Ratified</h4>
+                    <p class="max-w-2xl text-sm font-bold uppercase leading-relaxed">New zero-retention standards implemented across all authentication protocols via Supabase integration.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- ETHICS: THE CHARTER (PAGE 5) -->
+        <main id="ethics-page" class="hidden page-transition px-6 max-w-screen-2xl mx-auto pb-32">
+            <h2 class="text-8xl font-extrabold uppercase tracking-tightest mb-24">Ethics.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+                <div class="bg-gray-50 p-16">
+                    <h4 class="text-3xl font-black uppercase mb-8">Data Sovereignty</h4>
+                    <p class="text-sm font-medium leading-relaxed text-gray-600 mb-12">We believe your data belongs to you. Cirya does not track user cookies, IP history, or media preferences. Our business model is infrastructure, not information.</p>
+                    <div class="border-t border-black pt-6">
+                        <span class="text-[10px] font-black uppercase tracking-widest">Protocol: Zero Footprint</span>
+                    </div>
+                </div>
+                <div class="bg-black text-white p-16">
+                    <h4 class="text-3xl font-black uppercase mb-8 text-ciryablue">Missing Children 404</h4>
+                    <p class="text-sm font-medium leading-relaxed text-gray-400 mb-12">Every 404 error on the Cirya Network is a missed connection. We repurpose that dead space to display missing children alerts, turning technical errors into social recovery opportunities.</p>
+                    <div class="border-t border-white/20 pt-6">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-ciryablue">Protocol: Social Utility</span>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- FOOTER: CORPORATE COMPLIANCE -->
-    <footer class="bg-black text-white pt-24 pb-8 px-8">
+    <!-- FOOTER: CORPORATE DATA -->
+    <footer class="bg-black text-white pt-32 pb-12 px-6 mt-auto">
         <div class="max-w-screen-2xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-12">
-                <div class="col-span-2">
-                    <img class="h-5 w-auto mb-6 opacity-50 grayscale invert" src="Group 373.svg" alt="Cirya">
-                    <p class="text-[10px] text-gray-500 max-w-xs leading-relaxed uppercase font-bold tracking-widest">
-                        Cirya Media Network is a private infrastructure conglomerate. We operate with absolute transparency for stakeholders and absolute privacy for users.
+            <div class="flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-24 mb-12">
+                <div class="max-w-sm">
+                    <img class="h-6 w-auto mb-8 invert grayscale" src="Group 373.svg" alt="Cirya">
+                    <p class="text-[10px] font-bold uppercase tracking-widest leading-relaxed text-gray-500">
+                        Cirya Media Network is a private infrastructure conglomerate based in California. We specialize in high-fidelity decentralized audio networks.
                     </p>
                 </div>
-                <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-6">Legal</h4>
-                    <ul class="text-[9px] font-bold uppercase space-y-3 text-gray-500">
-                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white transition">Ethics Charter</a></li>
-                        <li><a href="#" class="hover:text-white transition">Node Licensing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-6">Contact</h4>
-                    <ul class="text-[9px] font-bold uppercase space-y-3 text-gray-500">
-                        <li><a href="mailto:contact@cirya.co" class="hover:text-white transition">contact@cirya.co</a></li>
-                        <li><a href="#" class="hover:text-white transition">Press Inquiries</a></li>
-                    </ul>
+                <div class="flex gap-24 mt-12 md:mt-0">
+                    <div class="space-y-4">
+                        <h6 class="text-[10px] font-black uppercase tracking-[0.4em] text-ciryablue">Portal</h6>
+                        <ul class="text-[9px] font-bold uppercase space-y-2 text-gray-400">
+                            <li><button onclick="showPage('home')">Home</button></li>
+                            <li><button onclick="showPage('radio')">Broadcasting</button></li>
+                            <li><a href="https://cirya.co/careers">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h6 class="text-[10px] font-black uppercase tracking-[0.4em] text-ciryablue">Legal</h6>
+                        <ul class="text-[9px] font-bold uppercase space-y-2 text-gray-400">
+                            <li><button onclick="showPage('ethics')">Ethics Charter</button></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Privacy</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center text-[8px] font-black uppercase tracking-[0.4em] text-gray-700">
-                <p>&copy; 2026 CIRYA MEDIA NETWORK. ALL RIGHTS RESERVED.</p>
+            <div class="flex flex-col md:flex-row justify-between items-center text-[9px] font-black uppercase tracking-[0.5em] text-gray-700">
+                <p>&copy; 2026 CIRYA MEDIA NETWORK. DECENTRALIZED BY DESIGN.</p>
                 <p>STATUS: VERIFIED SECURE</p>
             </div>
         </div>
