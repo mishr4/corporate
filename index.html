@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cirya Corporate</title>
+    
+    <!-- Social Media / Discord Preview Metadata -->
+    <meta property="og:title" content="Cirya Corporate">
+    <meta property="og:description" content="Capital & Intelligence Network">
+    <meta property="og:image" content="Slide 16_9 - 58 (2).png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="Slide 16_9 - 58 (2).png">
+
     <link rel="icon" type="image/png" href="Frame 27 (8).png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,6 +28,21 @@
                     }
                 }
             }
+        }
+
+        let isPlaying = false;
+        const audio = new Audio('https://cast.cirya.co/listen/one/radio.mp3');
+
+        function toggleAudio() {
+            const btn = document.getElementById('play-btn-icon');
+            if (isPlaying) {
+                audio.pause();
+                btn.innerHTML = '<path d="M8 5v14l11-7z"/>';
+            } else {
+                audio.play();
+                btn.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+            }
+            isPlaying = !isPlaying;
         }
 
         function navigate() {
@@ -117,10 +141,12 @@
             transform: translateY(-1px);
         }
 
-        .banner-asset {
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Slide 16_9 - 58 (2).png');
-            background-size: cover;
-            background-position: center;
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            border-color: #3b28cc;
         }
     </style>
 </head>
@@ -161,27 +187,65 @@
 
     <!-- HOME PAGE -->
     <main id="home" class="page-transition opacity-100 translate-y-0">
-        <header class="banner-asset pt-72 pb-56 border-b border-gray-100 text-white">
+        <header class="bg-white pt-72 pb-32">
             <div class="max-w-7xl mx-auto px-6 text-center">
-                <h1 class="text-6xl md:text-8xl font-extrabold mb-8 uppercase tracking-tightest">Capital & Intelligence</h1>
-                <p class="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">High-value digital infrastructure for the global intelligence network.</p>
+                <h1 class="text-6xl md:text-8xl font-extrabold text-black mb-8 uppercase tracking-tightest">Capital & Intelligence</h1>
+                <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-16 font-medium leading-relaxed">High-value digital infrastructure for the global intelligence network.</p>
                 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                    <div class="bg-black/50 backdrop-blur-md p-6 border border-white/10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-32">
+                    <div class="bg-gray-50 p-6 border border-gray-100">
                         <p class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-1">Market Cap</p>
-                        <p class="text-xl font-extrabold text-white">$8.4B</p>
+                        <p class="text-xl font-extrabold">$8.4B</p>
                     </div>
-                    <div class="bg-black/50 backdrop-blur-md p-6 border border-white/10">
+                    <div class="bg-gray-50 p-6 border border-gray-100">
                         <p class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-1">Active Nodes</p>
-                        <p class="text-xl font-extrabold text-white">1,242</p>
+                        <p class="text-xl font-extrabold">1,242</p>
                     </div>
-                    <div class="bg-black/50 backdrop-blur-md p-6 border border-white/10">
+                    <div class="bg-gray-50 p-6 border border-gray-100">
                         <p class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-1">Stock Price</p>
-                        <p class="text-xl font-extrabold text-green-400">$1,482</p>
+                        <p class="text-xl font-extrabold text-green-600">$1,482</p>
                     </div>
-                    <div class="bg-black/50 backdrop-blur-md p-6 border border-white/10">
+                    <div class="bg-gray-50 p-6 border border-gray-100">
                         <p class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-1">Revenue</p>
-                        <p class="text-xl font-extrabold text-white">$540M</p>
+                        <p class="text-xl font-extrabold">$540M</p>
+                    </div>
+                </div>
+
+                <!-- CARDS SECTION -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-7xl mx-auto pb-24">
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 w-12 bg-ciryablue mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Broadcast Assets</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">We manage a portfolio of high-availability broadcast nodes, ensuring low-latency transmission across global digital radio networks.</p>
+                        <p class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">Asset ID: CIR-RADIO-01</p>
+                    </div>
+
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 w-12 bg-black mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Digital Ethics</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">Independence is our core metric. Our editorial and technical operations are shielded from external institutional pressure.</p>
+                        <button onclick="showPage('ethics')" class="text-[10px] font-extrabold text-ciryablue uppercase tracking-widest hover:underline">View Ethics Charter →</button>
+                    </div>
+
+                    <div class="bg-white p-10 border border-gray-100 card-hover shadow-sm">
+                        <div class="w-12 h-1 w-12 bg-gray-200 mb-8"></div>
+                        <h3 class="text-2xl font-extrabold uppercase mb-4 tracking-tightest">Intelligence Grid</h3>
+                        <p class="text-gray-500 font-medium leading-relaxed mb-8">Our network leverages real-time data verification to provide high-fidelity reporting and market analysis for the modern era.</p>
+                        <p class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">Status: Fully Operational</p>
+                    </div>
+                </div>
+
+                <!-- ABOUT US EXPANDED -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-7xl mx-auto pb-56">
+                    <div class="bg-gray-50 p-12 border border-gray-100">
+                        <h4 class="text-[11px] font-extrabold uppercase tracking-widest text-ciryablue mb-6">Our Operations</h4>
+                        <h3 class="text-4xl font-extrabold uppercase mb-6 tracking-tightest">Decentralized Power</h3>
+                        <p class="text-gray-600 font-medium leading-relaxed">Cirya functions as a decentralized media conglomerate. We don't just report news; we build the pipes that carry it. By owning our server clusters and broadcast arrays, we eliminate middle-man censorship and ensure the highest possible network uptime.</p>
+                    </div>
+                    <div class="bg-gray-50 p-12 border border-gray-100">
+                        <h4 class="text-[11px] font-extrabold uppercase tracking-widest text-ciryablue mb-6">Our Vision</h4>
+                        <h3 class="text-4xl font-extrabold uppercase mb-6 tracking-tightest">Future-Proof Media</h3>
+                        <p class="text-gray-600 font-medium leading-relaxed">The traditional media landscape is fragmented. Cirya consolidates capital and technical intelligence to create a singular, robust source of truth. We are investing in the next decade of digital communication, from encrypted radio streams to global intelligence dashboards.</p>
                     </div>
                 </div>
             </div>
@@ -202,16 +266,16 @@
                         <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
                         <span class="text-[11px] font-extrabold tracking-widest uppercase">Live Broadcast</span>
                     </div>
-                    <h3 class="text-6xl font-extrabold uppercase mb-4">Cirya Radio</h3>
-                    <p class="text-gray-400 font-bold mb-16 uppercase tracking-widest">Now Playing: Network Intelligence Stream</p>
+                    <h3 class="text-6xl font-extrabold uppercase mb-4">Cirya Radio One</h3>
+                    <p class="text-gray-400 font-bold mb-16 uppercase tracking-widest">Source: https://cast.cirya.co</p>
                     
                     <div class="flex items-center space-x-8">
-                        <button class="w-20 h-20 bg-white text-black flex items-center justify-center rounded-full hover:bg-ciryablue hover:text-white transition group">
-                            <svg class="w-8 h-8 fill-current translate-x-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <button onclick="toggleAudio()" class="w-20 h-20 bg-white text-black flex items-center justify-center rounded-full hover:bg-ciryablue hover:text-white transition group">
+                            <svg id="play-btn-icon" class="w-8 h-8 fill-current translate-x-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </button>
                         <div class="flex-1">
                             <div class="h-1 bg-gray-800 w-full mb-4"><div class="h-1 bg-ciryablue w-1/3"></div></div>
-                            <div class="flex justify-between text-[10px] font-extrabold uppercase tracking-widest text-gray-500"><span>Live Feed</span><span>Encrypted</span></div>
+                            <div class="flex justify-between text-[10px] font-extrabold uppercase tracking-widest text-gray-500"><span>Streaming MP3</span><span>Secure Feed</span></div>
                         </div>
                     </div>
                 </div>
@@ -248,7 +312,7 @@
                     <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Head of Radio</p>
                 </div>
                 <div class="group">
-                    <img src="https://i.ibb.co/S76916Vv/Rectangle-63.png" alt="Seehed" class="w-full aspect-square object-cover mb-8 grayscale hover:grayscale-0 transition duration-500">
+                    <img src="https://i.ibb.co/Xxd94vV5/Rectangle-62.png" alt="Seehed" class="w-full aspect-square object-cover mb-8 grayscale hover:grayscale-0 transition duration-500">
                     <h3 class="text-3xl font-extrabold uppercase mb-2 text-black">Seehed</h3>
                     <p class="text-ciryablue font-extrabold text-[10px] uppercase tracking-widest">Product Engineering</p>
                 </div>
@@ -275,15 +339,14 @@
         </section>
     </main>
 
-    <!-- Support Banner -->
-    <section class="banner-asset py-24 relative overflow-hidden text-white border-y border-white/10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-10 relative z-10">
+    <!-- Discord Support Banner -->
+    <section class="bg-ciryablue py-20 text-white border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-10">
             <div class="text-center md:text-left">
                 <h4 class="text-4xl md:text-5xl font-extrabold uppercase tracking-tightest mb-3">Wanna support journalism?</h4>
-                <p class="text-gray-200 text-sm font-extrabold uppercase tracking-widest">Join the intelligence network today.</p>
+                <p class="text-blue-200 text-sm font-extrabold uppercase tracking-widest">Join the intelligence network today.</p>
             </div>
-            <a href="https://discord.gg/cirya" class="bg-white text-black px-12 py-5 font-extrabold text-sm uppercase tracking-widest hover:bg-ciryablue hover:text-white transition rounded-sm flex items-center gap-4">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.862-1.297 1.197-1.99a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.863-.886.077.077 0 0 1-.008-.128c.125-.094.248-.192.366-.293a.077.077 0 0 1 .08-.01c3.941 1.808 8.193 1.808 12.069 0a.077.077 0 0 1 .081.009c.118.101.241.199.366.293a.077.077 0 0 1-.006.128 12.986 12.986 0 0 1-1.863.886.076.076 0 0 0-.041.106c.335.693.735 1.36 1.197 1.99a.077.077 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            <a href="https://discord.gg/cirya" class="bg-white text-black px-12 py-5 font-extrabold text-sm uppercase tracking-widest hover:bg-black hover:text-white transition rounded-sm flex items-center gap-4">
                 discord.gg/cirya
             </a>
         </div>
@@ -307,7 +370,6 @@
                     <button onclick="showPage('radio')" class="text-[10px] font-extrabold uppercase tracking-widest hover:text-white transition">Radio</button>
                     <button onclick="showPage('leadership')" class="text-[10px] font-extrabold uppercase tracking-widest hover:text-white transition">Leadership</button>
                     <a href="https://x.com/ciryanews" class="text-[10px] font-extrabold uppercase tracking-widest hover:text-white transition">Twitter</a>
-                    <img class="h-4 w-auto grayscale" src="blackethics.svg" alt="Ethics">
                 </div>
             </div>
         </div>
