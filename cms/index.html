@@ -4,186 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ========================================== -->
-    <!-- SEO & DISCORD LARGE BANNER PREVIEW SETTINGS -->
-    <!-- ========================================== -->
-    <title>Cirya CMS Services | Next-Gen Content Delivery</title>
-    <meta name="description" content="Cirya CMS provides professional content management services, specializing in high-speed image serving, edge network distribution, and dynamic storytelling.">
+    <!-- SEO & DISCORD LARGE BANNER -->
+    <title>Cirya CMS | Image & Story Infrastructure</title>
+    <meta name="description" content="Official CMS Services department for Cirya. Powering high-speed image optimization and dynamic story distribution.">
     
-    <!-- Open Graph (Standard Discord/Facebook) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://corporate.cirya.co/cms">
     <meta property="og:title" content="Cirya CMS Services">
-    <meta property="og:description" content="Powering the next generation of digital media with high-speed asset distribution.">
-    <meta property="og:image" content="https://i.postimg.cc/KzYCJ584/Slide-16-9-69-(2).png">
+    <meta property="og:description" content="High-performance edge network for serving images and stories.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/mishr4/corporate/a78b078801fb23d02f53ae9eb3aaa43dbc4f829c/Slide%2016_9%20-%2058%20(2).png">
     
-    <!-- THIS FORCES THE BIG BANNER -->
+    <!-- FORCES LARGE IMAGE ON DISCORD -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cirya CMS Services">
-    <meta name="twitter:description" content="High-performance edge network for serving images and stories.">
-    <meta name="twitter:image" content="https://i.postimg.cc/KzYCJ584/Slide-16-9-69-(2).png">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/mishr4/corporate/a78b078801fb23d02f53ae9eb3aaa43dbc4f829c/Slide%2016_9%20-%2058%20(2).png">
 
     <!-- FAVICON -->
-    <!-- REPLACE HREF WITH YOUR GITHUB RAW LINK FOR 'Frame 27 (8).png' -->
-    <link rel="icon" type="image/png" href="YOUR_GITHUB_RAW_LINK_HERE/Frame_27_8.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mishr4/corporate/a78b078801fb23d02f53ae9eb3aaa43dbc4f829c/Frame%2027%20(8).png">
 
-    <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #050505; /* Deep rich black */
-            color: #e5e5e5; 
-            margin: 0;
-            background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, transparent 70%);
+            background-color: #030303; 
+            color: #ffffff;
+            background-image: radial-gradient(circle at 50% -10%, #111 0%, transparent 60%);
         }
         .metallic-text {
-            background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
+            background: linear-gradient(to bottom, #fff 20%, #888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            display: inline-block;
         }
-        .glass-panel {
+        .glass {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            transition: border-color 0.3s ease;
+            backdrop-filter: blur(10px);
         }
-        .glass-panel:hover {
-            border-color: rgba(255, 255, 255, 0.15);
+        .status-dot {
+            box-shadow: 0 0 8px #22c55e;
         }
-        .glow-accent {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            filter: blur(80px);
-            border-radius: 50%;
-            z-index: -1;
+        .nav-link {
+            transition: all 0.3s;
+            letter-spacing: 0.05em;
         }
+        .nav-link:hover { color: white; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
     </style>
 </head>
-<body class="antialiased min-h-screen relative overflow-x-hidden">
+<body class="antialiased selection:bg-white selection:text-black">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-panel border-b-0 border-white/5">
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            
-            <!-- LOGO AREA -->
-            <div class="flex items-center space-x-3">
-                <!-- REPLACE SRC WITH YOUR GITHUB RAW LINK FOR 'Group 373.svg' -->
-                <img src="YOUR_GITHUB_RAW_LINK_HERE/Group_373.svg" alt="Cirya Logo" class="h-8 w-auto opacity-90">
-                <div class="h-6 w-px bg-white/20"></div> <!-- Divider line -->
-                <span class="text-sm font-bold tracking-widest uppercase text-gray-400">CMS Services</span>
+            <div class="flex items-center space-x-4">
+                <img src="https://raw.githubusercontent.com/mishr4/corporate/a78b078801fb23d02f53ae9eb3aaa43dbc4f829c/Group%20373.svg" alt="Cirya" class="h-7 w-auto">
+                <div class="h-4 w-px bg-white/20"></div>
+                <span class="text-[10px] uppercase font-black tracking-[0.3em] text-gray-500">CMS Systems</span>
             </div>
-
-            <div class="hidden md:flex space-x-8 text-xs font-semibold uppercase tracking-widest text-gray-500">
-                <a href="#infrastructure" class="hover:text-white transition">Infrastructure</a>
-                <a href="#telemetry" class="hover:text-white transition">Telemetry</a>
+            <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#core" class="nav-link">Infrastructure</a>
+                <a href="#delivery" class="nav-link">Delivery</a>
+                <a href="#nodes" class="nav-link">Nodes</a>
             </div>
-            <button class="px-5 py-2 text-xs font-bold uppercase tracking-wider bg-white text-black rounded-sm hover:bg-gray-200 transition">System Login</button>
+            <div class="flex items-center space-x-4">
+                <div class="w-2 h-2 bg-green-500 rounded-full status-dot animate-pulse"></div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-green-500">System Live</span>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <main class="relative pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
-        <div class="glow-accent top-20 left-1/2 transform -translate-x-1/2"></div>
-        
-        <div class="inline-flex items-center space-x-2 glass-panel px-4 py-1.5 rounded-full mb-8">
-            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span class="text-xs font-medium text-gray-300">Global Edge Network: Online</span>
-        </div>
-
-        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter metallic-text leading-tight">
-            The Engine Behind <br> The Narrative.
+    <!-- Hero -->
+    <header class="pt-48 pb-32 px-6 text-center max-w-5xl mx-auto">
+        <h1 class="text-6xl md:text-8xl font-black mb-8 metallic-text tracking-tighter leading-none">
+            High Velocity <br> Content.
         </h1>
-        <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-12">
-            Cirya CMS Services acts as the central nervous system for our digital presence. We specialize in the ultra-low latency delivery of media assets, dynamic stories, and highly compressed imagery to global edge nodes.
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12">
+            The Cirya CMS serves as our proprietary backbone for image optimization and interactive storytelling. We deliver assets globally with sub-millisecond precision.
         </p>
-    </main>
+        <div class="flex flex-wrap justify-center gap-4">
+            <div class="glass px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest border-white/10">
+                Edge-Ready
+            </div>
+            <div class="glass px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest border-white/10">
+                AI-Compression
+            </div>
+            <div class="glass px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest border-white/10">
+                Dynamic Stories
+            </div>
+        </div>
+    </header>
 
-    <!-- What We Do Section -->
-    <section id="infrastructure" class="py-20 border-t border-white/5 relative bg-black/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 metallic-text text-center">Core CMS Architecture</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="glass-panel p-8 rounded-xl relative overflow-hidden">
-                    <div class="text-white/20 text-5xl mb-4 font-black">01</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Asset Optimization</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Every image uploaded to the Cirya network is automatically converted to next-gen formats (WebP/AVIF), resized for multiple viewports, and stripped of unnecessary metadata to ensure instantaneous load times.
-                    </p>
+    <!-- Detailed Info Section -->
+    <section id="core" class="py-24 px-6 border-t border-white/5 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 metallic-text leading-tight">Advanced Content <br> Orchestration.</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-white font-bold mb-2">Multi-Format Pipeline</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Our CMS handles raw ingress files and transcodes them into WebP and AVIF instantly. This ensures your high-resolution images load 80% faster without losing visual fidelity.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-2">Stateful Narrative Engine</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">We serve more than just images. Our department handles the logic for "Stories"—dynamic, interactive content pieces that update across our network in real-time via JSON injection.</p>
+                    </div>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="glass-panel p-8 rounded-xl relative overflow-hidden">
-                    <div class="text-white/20 text-5xl mb-4 font-black">02</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Story Distribution</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        We don't just host static files. Our CMS compiles complex narratives into lightweight JSON payloads, allowing front-end applications to render rich, interactive stories flawlessly across any device.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glass-panel p-8 rounded-xl relative overflow-hidden">
-                    <div class="text-white/20 text-5xl mb-4 font-black">03</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Edge Caching</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        By leveraging a decentralized node network, assets are served from the server geographically closest to the user. This bypasses central server bottlenecks and guarantees 99.99% uptime.
-                    </p>
+            </div>
+            <div class="glass p-8 rounded-3xl border-white/10 relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+                <div class="relative z-10">
+                    <div class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-8 font-black">Technical Overview</div>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-gray-400 text-sm">Image Optimization</span>
+                            <span class="text-white text-sm font-mono">Automated</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-gray-400 text-sm">Global CDN</span>
+                            <span class="text-white text-sm font-mono">Cloudflare + Edge</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-gray-400 text-sm">Story Latency</span>
+                            <span class="text-white text-sm font-mono">< 14ms</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-gray-400 text-sm">Asset Security</span>
+                            <span class="text-white text-sm font-mono">AES-256</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Live Telemetry / Mock Data -->
-    <section id="telemetry" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-8">
+    <!-- Live Node Activity -->
+    <section id="nodes" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-12 flex justify-between items-end">
             <div>
-                <h2 class="text-3xl font-bold metallic-text mb-2">Live Node Telemetry</h2>
-                <p class="text-gray-500 text-sm">Real-time processing queue for the US-West region.</p>
+                <h2 class="text-3xl font-bold metallic-text">Global Telemetry</h2>
+                <p class="text-sm text-gray-500">Live processing distribution across Cirya nodes.</p>
             </div>
-            <div class="text-sm font-mono text-gray-400 mt-4 md:mt-0">
-                Load: [||||||||--] 82%
-            </div>
+            <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Region: US-WEST-01</div>
         </div>
-        
-        <div class="glass-panel rounded-xl overflow-hidden border border-white/10">
+
+        <div class="glass rounded-2xl overflow-hidden">
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm whitespace-nowrap">
-                    <thead class="bg-white/5 text-gray-400 text-xs uppercase tracking-wider font-semibold">
+                <table class="w-full text-left text-sm font-mono">
+                    <thead class="bg-white/5 text-gray-500 text-[10px] uppercase tracking-widest">
                         <tr>
-                            <th class="p-5">Request ID</th>
-                            <th class="p-5">Asset Type</th>
-                            <th class="p-5">Origin</th>
-                            <th class="p-5">Latency</th>
-                            <th class="p-5 text-right">Status</th>
+                            <th class="p-6">Process ID</th>
+                            <th class="p-6">Type</th>
+                            <th class="p-6">Target</th>
+                            <th class="p-6 text-right">Progress</th>
                         </tr>
                     </thead>
-                    <tbody class="font-mono text-gray-300 divide-y divide-white/5">
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="p-5 text-blue-400">req_88a9f2</td>
-                            <td class="p-5">image/webp (Lossless)</td>
-                            <td class="p-5">corporate.cirya.co</td>
-                            <td class="p-5">12ms</td>
-                            <td class="p-5 text-right"><span class="px-2 py-1 bg-green-500/10 text-green-400 rounded text-xs border border-green-500/20">SERVED</span></td>
+                    <tbody class="divide-y divide-white/5 text-gray-300">
+                        <tr class="hover:bg-white/[0.03] transition">
+                            <td class="p-6">#TRANS-8821</td>
+                            <td class="p-6">Image Optimization</td>
+                            <td class="p-6 text-blue-400">assets.cirya.co</td>
+                            <td class="p-6 text-right text-green-500">COMPLETE</td>
                         </tr>
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="p-5 text-blue-400">req_4b11c0</td>
-                            <td class="p-5">application/json (Story Data)</td>
-                            <td class="p-5">staff.cirya.co</td>
-                            <td class="p-5">8ms</td>
-                            <td class="p-5 text-right"><span class="px-2 py-1 bg-green-500/10 text-green-400 rounded text-xs border border-green-500/20">SERVED</span></td>
+                        <tr class="hover:bg-white/[0.03] transition">
+                            <td class="p-6">#STORY-4402</td>
+                            <td class="p-6">Story Ingress</td>
+                            <td class="p-6 text-blue-400">media.cirya.co</td>
+                            <td class="p-6 text-right text-yellow-500">CACHING</td>
                         </tr>
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="p-5 text-blue-400">req_99d1ee</td>
-                            <td class="p-5">image/png (Raw Upload)</td>
-                            <td class="p-5">ingress-node-02</td>
-                            <td class="p-5 text-yellow-500">450ms</td>
-                            <td class="p-5 text-right"><span class="px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded text-xs border border-yellow-500/20">OPTIMIZING</span></td>
+                        <tr class="hover:bg-white/[0.03] transition">
+                            <td class="p-6">#BUFF-9920</td>
+                            <td class="p-6">Buffer Flush</td>
+                            <td class="p-6 text-blue-400">global-edge-04</td>
+                            <td class="p-6 text-right text-blue-500">ACTIVE</td>
                         </tr>
                     </tbody>
                 </table>
@@ -192,9 +184,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-black py-10 text-center">
-        <p class="text-gray-600 text-xs font-semibold uppercase tracking-widest">
-            &copy; 2026 Cirya Media Group &middot; CMS Infrastructure Division
+    <footer class="py-20 border-t border-white/5 text-center">
+        <img src="https://raw.githubusercontent.com/mishr4/corporate/a78b078801fb23d02f53ae9eb3aaa43dbc4f829c/Group%20373.svg" alt="Cirya" class="h-6 w-auto mx-auto mb-6 opacity-30">
+        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-600 font-bold">
+            &copy; 2026 Cirya Media Group &middot; CMS Systems Division
         </p>
     </footer>
 
